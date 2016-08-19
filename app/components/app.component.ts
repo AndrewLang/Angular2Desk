@@ -1,5 +1,5 @@
 ﻿import {Component}                          from '@angular/core';
-import { ROUTER_DIRECTIVES}     from '@angular/router';
+import { ROUTER_DIRECTIVES}                 from '@angular/router';
 
 import {InstrumentsComponent}               from './instrument/instruments.component';
 import {ChassisComponent}                   from './chassis/chassis.component';
@@ -10,7 +10,7 @@ import {SidebarService}                     from './services/SidebarService';
 
 @Component({
     selector: 'app',
-    templateUrl: '/Views/Home/',
+    template: '<h2>this is my home</h2>',
     directives: [ROUTER_DIRECTIVES]
 })
 /*@RouteConfig([
