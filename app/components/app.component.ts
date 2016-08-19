@@ -11,7 +11,8 @@ import {SidebarService}                     from './services/SidebarService';
 @Component({
     selector: 'app',
     template: '<h2>this is my home</h2>',
-    directives: [ROUTER_DIRECTIVES]
+    directives: [ROUTER_DIRECTIVES],
+    providers:[ SidebarService]
 })
 /*@RouteConfig([
     { path: '/instruments/...', name: 'Instruments', component: InstrumentsComponent, useAsDefault: true },
@@ -26,9 +27,9 @@ export class AppComponent {
     subscription: any;
 
     constructor(private mSidebarService: SidebarService) {
-        /*this.subscription = mSidebarService.onVisibleChanged.subscribe(visible=> {
+        this.subscription = mSidebarService.onVisibleChanged.subscribe(visible=> {
             this.IsSidebarVisible = visible;
-        });*/
+        });
     }
 
     toggleSidebar() {

@@ -1,5 +1,6 @@
-﻿import {EventEmitter}             from '@angular/core';
+﻿import {EventEmitter, Injectable}             from '@angular/core';
 
+@Injectable()
 export class SidebarService {
     IsSidebarVisible: boolean = false;
    public onVisibleChanged: EventEmitter<any> = new EventEmitter();
