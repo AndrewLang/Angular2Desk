@@ -10,7 +10,7 @@ import {SidebarService}                     from './services/SidebarService';
 
 @Component({
     selector: 'app',
-    template: '<h2>this is my home</h2>',
+    templateUrl: 'views/home.html',
     directives: [ROUTER_DIRECTIVES],
     providers:[ SidebarService]
 })
