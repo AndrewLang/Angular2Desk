@@ -3,14 +3,18 @@ const app = electron.app;
 const BrowserWindow = electron.BrowserWindow;
 
 let mainWindow;
+let debug = true;
 
 function createWindow(){
-    mainWindow = new BrowserWindow({ width:800, height:600});
+    mainWindow = new BrowserWindow({ width:1200, height:600});
     mainWindow.loadURL(`file://${__dirname}/index.html`)
 
     mainWindow.on('closed', function(){
         mainWindow = null;
     });
+
+    if( debug )
+        mainWindow.webContents.openDevTools();
 }
 
 app.on('ready', createWindow);

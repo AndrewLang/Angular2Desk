@@ -4,7 +4,12 @@
   "description": "",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "tsc && concurrently \"npm run tsc:w electron .",
+    "lite": "lite-server",
+    "postinstall": "typings install",
+    "tsc": "tsc",
+    "tsc:w": "tsc -w",
+    "typings": "typings"
   },
   "author": "Andy Lang",
   "license": "ISC",

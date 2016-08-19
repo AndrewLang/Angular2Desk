@@ -9,17 +9,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var AppComponent = (function () {
-    function AppComponent() {
+// Error handling service
+var ErrorHandlingService = (function () {
+    function ErrorHandlingService() {
     }
-    AppComponent = __decorate([
-        core_1.Component({
-            selector: 'my-app',
-            template: '<h1>My First Angular 2 app.</h1>'
-        }), 
+    ErrorHandlingService.prototype.HandleError = function (error) {
+        console.log(error);
+    };
+    ErrorHandlingService = __decorate([
+        core_1.Injectable(), 
         __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+    ], ErrorHandlingService);
+    return ErrorHandlingService;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.ErrorHandlingService = ErrorHandlingService;
+//# sourceMappingURL=ErrorHandlingService.js.map
