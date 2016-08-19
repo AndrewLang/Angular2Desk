@@ -4,7 +4,7 @@
   "description": "",
   "main": "main.js",
   "scripts": {
-    "start": "tsc && concurrently \"npm run tsc:w electron .",
+    "start": "tsc && concurrently  && electron .",
     "lite": "lite-server",
     "postinstall": "typings install",
     "tsc": "tsc",
