@@ -26,9 +26,9 @@ export class AppComponent {
     subscription: any;
 
     constructor(private mSidebarService: SidebarService) {
-        this.subscription = mSidebarService.onVisibleChanged.subscribe(visible=> {
+        /*this.subscription = mSidebarService.onVisibleChanged.subscribe(visible=> {
             this.IsSidebarVisible = visible;
-        });
+        });*/
     }
 
     toggleSidebar() {
