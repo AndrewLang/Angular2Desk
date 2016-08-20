@@ -6,7 +6,7 @@ import {ChassisDetailComponent}          from './chassis-detail.component';
 import {SidebarService}                  from '../services/SidebarService';
 
 @Component({
-    templateUrl: '/views/Chassis/',
+    templateUrl: './views/chassis/chassis.html',
     directives: [RouterOutlet]
 })
 /*@RouteConfig([

@@ -8,7 +8,7 @@ import {SidebarService}                     from '../services/SidebarService';
 
 @Component({
     selector: 'instruments',
-    templateUrl: '/views/Instruments/',
+    templateUrl: './views/instruments/instruments.html',
     directives: [RouterOutlet],
     providers: [InstrumentListComponent]
 })

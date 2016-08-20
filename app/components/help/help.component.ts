@@ -5,7 +5,7 @@ import {HelpListComponent}             from './help-list.component';
 import {SidebarService}                from '../services/SidebarService';
 
 @Component({
-    templateUrl: '/views/Help/',
+    templateUrl: './views/help/help.html',
     directives: [RouterOutlet]
 })
 /*@RouteConfig([

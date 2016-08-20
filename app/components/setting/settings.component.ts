@@ -6,7 +6,7 @@ import {SettingDetailComponent}          from './setting-detail.component';
 import {SidebarService}                  from '../services/SidebarService';
 
 @Component({
-    templateUrl: '/views/Settings/',
+    templateUrl: './views/settings/settings.html',
     directives: [RouterOutlet]
 })
 /*@RouteConfig([
