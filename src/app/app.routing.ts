@@ -1,3 +1,4 @@
+import { ModuleWithProviders }              from '@angular/core';
 import { Routes, RouterModule }             from '@angular/router';
 
 import {InstrumentsComponent}               from './components/instrument/instruments.component';
@@ -7,21 +8,25 @@ import {HelpComponent}                      from './components/help/help.compone
 
 const appRoutes : Routes = [  
     {
-        path:'/components/instruments/...',
+        path:'instruments', 
         component: InstrumentsComponent
     },
     { 
-        path:'/chassis/...',
+        path:'chassis',
         component:ChassisComponent
     },
     {
-        path:'/settings',
+        path:'settings',
         component:SettingsComponent
     },
     {
-        path:'/help/...',
+        path:'help',
         component:HelpComponent
     }
  ];
 
- export const routing = RouterModule.forRoot( appRoutes );
+ export const appRoutingProviders: any[] = [
+
+];
+
+ export const routing : ModuleWithProviders = RouterModule.forRoot( appRoutes );

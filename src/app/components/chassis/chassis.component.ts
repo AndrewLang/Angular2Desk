@@ -1,9 +1,9 @@
-﻿import {Component}                          from '@angular/core';
-import {Routes, RouterModule, RouterOutlet}          from '@angular/router';
+﻿import {Component}                                      from '@angular/core';
+import {Routes, RouterModule, RouterOutlet}             from '@angular/router';
 
-import {ChassisListComponent}            from './chassis-list.component';
-import {ChassisDetailComponent}          from './chassis-detail.component';
-import {SidebarService}                  from '../services/SidebarService';
+import {ChassisListComponent}                           from './chassis-list.component';
+import {ChassisDetailComponent}                         from './chassis-detail.component';
+import {SidebarService}                                 from '../services/SidebarService';
 
 @Component({
     templateUrl: './views/chassis/chassis.html',
