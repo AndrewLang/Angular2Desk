@@ -1,11 +1,6 @@
 ﻿import {Component}                          from '@angular/core';
 import {Routes, RouterModule}               from '@angular/router';
 
-import {InstrumentsComponent}               from './instrument/instruments.component';
-import {ChassisComponent}                   from './chassis/chassis.component';
-import {SettingsComponent}                  from './setting/settings.component';
-import {HelpComponent}                      from './help/help.component';
-
 import {SidebarService}                     from './services/SidebarService';
 
 @Component({
