@@ -1,5 +1,5 @@
 ﻿import {Component}                       from '@angular/core';
-import { RouterOutlet}       from '@angular/router';
+import { ROUTER_DIRECTIVES}              from '@angular/router';
 
 import {SettingsListComponent}           from './settings-list.component';
 import {SettingDetailComponent}          from './setting-detail.component';
@@ -7,7 +7,7 @@ import {SidebarService}                  from '../services/SidebarService';
 
 @Component({
     templateUrl: 'views/settings/settings.html',
-    directives: [RouterOutlet]
+    directives: [ROUTER_DIRECTIVES]
 })
 /*@RouteConfig([
         { path: '/', name: 'Settings', component: SettingsListComponent, useAsDefault: true },

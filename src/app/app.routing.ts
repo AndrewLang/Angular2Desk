@@ -9,10 +9,12 @@ import {SettingsComponent}                  from './components/setting/settings.
 import {HelpComponent}                      from './components/help/help.component';
 
 const appRoutes: Routes = [
+    
     { path: 'instruments', component: InstrumentsComponent },
     { path: 'chassis', component: ChassisComponent },
     { path: 'settings', component: SettingsComponent },
-    { path: 'help', component: HelpComponent }
+    { path: 'help', component: HelpComponent },
+    { path: '', redirectTo: '/instruments', pathMatch:'full' },
 ];
 
 export const appRoutingProviders: any[] = [

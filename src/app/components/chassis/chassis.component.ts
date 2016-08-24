@@ -1,5 +1,5 @@
 ﻿import {Component}                                      from '@angular/core';
-import {Routes, RouterModule, RouterOutlet}             from '@angular/router';
+import {Routes, RouterModule, ROUTER_DIRECTIVES}             from '@angular/router';
 
 import {ChassisListComponent}                           from './chassis-list.component';
 import {ChassisDetailComponent}                         from './chassis-detail.component';
@@ -7,7 +7,7 @@ import {SidebarService}                                 from '../services/Sideba
 
 @Component({
     templateUrl: 'views/chassis/chassis.html',
-    directives: [RouterOutlet]
+    directives: [ROUTER_DIRECTIVES]
 })
 /*@RouteConfig([
     { path: '/', name: 'Chassises', component: ChassisListComponent, useAsDefault: true },

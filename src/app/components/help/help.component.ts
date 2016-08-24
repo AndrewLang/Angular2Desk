@@ -1,12 +1,12 @@
 ﻿import {Component}                     from '@angular/core';
-import { RouterOutlet}                 from '@angular/router';
+import { ROUTER_DIRECTIVES}                 from '@angular/router';
 
 import {HelpListComponent}             from './help-list.component';
 import {SidebarService}                from '../services/SidebarService';
 
 @Component({
     templateUrl: 'views/help/help.html',
-    directives: [RouterOutlet]
+    directives: [ROUTER_DIRECTIVES]
 })
 /*@RouteConfig([
         { path: '/', name: 'Help', component: HelpListComponent, useAsDefault: true }

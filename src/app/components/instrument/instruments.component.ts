@@ -1,7 +1,7 @@
 ﻿
 
 import {Component}                from '@angular/core';
-import { RouterOutlet}            from '@angular/router';
+import { ROUTER_DIRECTIVES}            from '@angular/router';
 
 
 import {InstrumentListComponent}            from './instruments-list.component';
@@ -10,7 +10,7 @@ import {SidebarService}                     from '../services/SidebarService';
 
 @Component({
     templateUrl: 'views/instruments/instruments.html',
-    directives: [RouterOutlet],
+    directives: [ROUTER_DIRECTIVES],
     providers: [InstrumentListComponent]
 })
 export class InstrumentsComponent {

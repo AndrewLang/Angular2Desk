@@ -1,5 +1,5 @@
 ﻿import {Component, OnInit, Injectable}    from '@angular/core';
-import {Router,RouterOutlet}              from '@angular/router';
+import {ROUTER_DIRECTIVES,Router}              from '@angular/router';
 
 import {DataService}                    from '../../services/DataService';
 import {ErrorHandlingService}           from '../../services/ErrorHandlingService';
@@ -9,7 +9,7 @@ import {InstrumentDetailComponent}      from './instrument-detail.component';
 @Component({
     selector: 'instrument-list',
     templateUrl: '/views/InstrumentList/',
-    directives: [RouterOutlet, InstrumentDetailComponent],
+    directives: [ROUTER_DIRECTIVES, InstrumentDetailComponent],
     providers: [DataService, ErrorHandlingService]
 })
 
