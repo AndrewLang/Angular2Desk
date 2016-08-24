@@ -2,7 +2,8 @@
 <html>
 
 <head>
-  <!--<base href="/"/>-->
+  
+  <base href="./"> <!-- this is very important -->
   <meta charset="UTF-8">
   <title>Hello World!</title>
 
@@ -35,7 +36,6 @@
 <script>
       System.import('app')
             .catch(function(err){ 
-              console.log("Boot app get errors.");
               console.error(err); 
             });
 </script>

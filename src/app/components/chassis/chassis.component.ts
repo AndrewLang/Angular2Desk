@@ -9,10 +9,7 @@ import {SidebarService}                                 from '../services/Sideba
     templateUrl: 'views/chassis/chassis.html',
     directives: [ROUTER_DIRECTIVES]
 })
-/*@RouteConfig([
-    { path: '/', name: 'Chassises', component: ChassisListComponent, useAsDefault: true },
-    { path: '/:id', name: 'ChassisDetail', component: ChassisDetailComponent }
-])*/
+
 export class ChassisComponent {
     IsSidebarVisible: boolean;
 

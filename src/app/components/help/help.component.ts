@@ -8,10 +8,7 @@ import {SidebarService}                from '../services/SidebarService';
     templateUrl: 'views/help/help.html',
     directives: [ROUTER_DIRECTIVES]
 })
-/*@RouteConfig([
-        { path: '/', name: 'Help', component: HelpListComponent, useAsDefault: true }
-    
-])*/
+
 export class HelpComponent {
     IsSidebarVisible: boolean;
 
