@@ -8,17 +8,16 @@
   <meta charset="UTF-8">
   <title>Hello World!</title>
 
-  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="node_modules/tether/dist/css/tether.min.css" />
-  <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css" />
-  <link rel="stylesheet" href="src/assets/styles/sidebar-fixed.min.css" />
-  <link rel="stylesheet" href="src/assets/styles/site.min.css" />
+  <link rel="stylesheet" type="text/css" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" type="text/css" href="node_modules/tether/dist/css/tether.min.css" />
+  <link rel="stylesheet" type="text/css" href="node_modules/font-awesome/css/font-awesome.min.css" />
+  <link rel="stylesheet" type="text/css" href="dist/app.css" />
 </head>
 
 <body>
   <app>
     <div class="text-xs-center center-block">
-      <i class="fa fa-spinner fa-spin fa-3x "> </i>
+      <i class="fa fa-spinner fa-spin fa-3x"> </i>
       <h5>Loading...</h5>
     </div>
   </app>
@@ -31,17 +30,17 @@
 <script src="node_modules/reflect-metadata/Reflect.js"></script>
 <script src="node_modules/systemjs/dist/system.src.js"></script>
 <script src="node_modules/jquery/dist/jquery.min.js"></script>
-<script src="node_modules/tether/dist/js/tether.min.js" />
-<script src="node_modules/bootstrap/dist//js/bootstrap.min.js"></script>
-
+<script src="node_modules/tether/dist/js/tether.min.js"></script>
+<script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="dist/app.js"></script>
 
 <!-- 2. Configure SystemJS -->
 <script src="systemjs.config.js"></script>
 <script>
-      System.import('app')
+    System.import('app')
             .catch(function(err){ 
               console.error(err); 
-            });
+            }); /*  */
 </script>
 
 </html>
