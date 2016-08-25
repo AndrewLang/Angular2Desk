@@ -1,0 +1,87 @@
+﻿
+.navbar-left-margin {
+	margin-left: 10px;
+	margin-top: 8px;
+}
+
+.navbar-right {
+	margin-right: 0;
+}
+
+.instrumentThumb {
+	max-width: 60px;
+}
+
+.instrumentThumbBig {
+	max-width: 120px;
+}
+
+.nopadding {
+	padding: 0 !important;
+	margin: 0 !important;
+}
+
+.nomargin {
+	margin: 0 !important;
+}
+
+.handCursor {
+	cursor: pointer;
+}
+
+.evenBg {
+	background-color: #f5f5f5;
+}
+
+.success-icon {
+	color: #1d9d74;
+	background-color: #FFFFFF;
+}
+
+.fail-icon {
+	color: #FFFFFF;
+	background-color: #FB404B;
+}
+
+.notification, .notification-big {
+	position: absolute;
+	text-align: center;
+	border-radius: 50px;
+	width: 23px;
+	height: 23px;
+	top: 6px;
+	left: 12px;
+	font-size: 1.4em;
+	padding: 1px;
+}
+
+.notification-big {
+	font-size: 2.4em;
+	width: 40px;
+	height: 40px;
+}
+
+.full-height {
+	height: 100%;
+	background: #ffffff;
+}
+
+.card {
+	height: 100%;
+	margin-bottom: 0;
+}
+
+#instrumentList.full-card-body {
+	height: calc(100% - 200px);
+}
+
+#instrumentDetail .full-card-body {
+	height: calc(100% - 48px);
+}
+
+.center-block {
+	position: absolute;
+	top: 50%;
+	left:50%;
+	transform: translateY(-50%) translateX(-50%);
+}

@@ -1,0 +1,161 @@
+﻿$full-sidebar-width: 220px;
+$small-sidebar-width: 64px;
+
+body, html, .row-offcanvas {
+	height: 100%;
+}
+
+html, body {
+	font-family: verdana,arial,sans-serif;
+	color: #555555;
+	background-color: #e5e5e5;
+}
+
+.nav {
+	font-family: Arial,sans-serif;
+}
+
+a {
+	color: #222222;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+hr {
+	border-color: #dedede;
+}
+
+#sidebar {
+	width: inherit;
+	background-color: #444444;
+	float: left;
+	height: 100%;
+	position: relative;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+.full-width {
+	min-width: $full-sidebar-width;
+	max-width: $full-sidebar-width;
+}
+
+.compact-width {
+	min-width: $small-sidebar-width;
+	max-width: $small-sidebar-width;
+}
+
+#sidebar, #sidebar a, #sidebar-footer a {
+	color: #ffffff;
+	text-shadow: 0 0 2px #000000;
+	font-size: 1.1em;
+	display: block;
+}
+
+#sidebar .nav-link {
+	padding: 0;
+}
+
+#sidebar .nav li > a:hover {
+	background-color: #393939;
+}
+
+#sidebar .router-link-active {
+	background-color: #393939;
+	border-left: 4px solid #e90029;
+}
+
+#main {
+	height: 100%;
+	overflow: auto;
+	background-color: #e9eaed;
+}
+
+#main .navbar {
+	border-radius: 0;
+	height: 54px;
+}
+
+.workArea {
+	width: 100%;
+	height: calc(100% - 54px);
+	overflow: auto;
+	position: relative;
+}
+
+.workArea .row {
+	margin-left: 0;
+	margin-right: 0;
+    height:100%;
+}
+
+.logo {
+	display: block;
+	background-color: #fff;
+	color: #3B5999;
+	height: 28px;
+	width: 28px;
+	margin-right: 2px;
+	font-size: 20px;
+	font-weight: 700;
+	text-align: center;
+	text-decoration: none;
+	border-radius: 2px;
+}
+/*
+ * off Canvas sidebar
+ * --------------------------------------------------
+ */
+@media (max-width:62em) {
+	#sidebar {
+		min-width: $small-sidebar-width;
+		max-width: $small-sidebar-width;
+	}
+}
+
+@media screen and (max-width: 48em) {
+	.row-offcanvas {
+		position: relative;
+		-webkit-transition: all 0.25s ease-out;
+		-moz-transition: all 0.25s ease-out;
+		transition: all 0.25s ease-out;
+		width: calc(100% + #{$small-sidebar-width});
+	}
+
+	.row-offcanvas-left {
+		left: -$small-sidebar-width;
+	}
+
+	.row-offcanvas-left.active {
+		left: 0;
+	}
+
+	.sidebar-offcanvas {
+		position: absolute;
+		top: 0;
+	}
+
+	.instrumentThumbBig {
+		max-width: 80px;
+	}
+
+	.notification-big {
+		font-size: 1.6em;
+		width: 26px;
+		height: 26px;
+	}
+    .list-group-item-heading {
+        font-size:1em;
+    }
+    .list-group-item-text{
+        font-size:0.8em;
+    }
+    .card-title {
+        font-size:1em;
+    }
+    .card-subtitle{
+        font-size:0.8em;
+    }
+}
