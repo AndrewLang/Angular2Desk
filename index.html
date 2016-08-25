@@ -2,19 +2,26 @@
 <html>
 
 <head>
-  
-  <base href="./"> <!-- this is very important -->
+
+  <base href="./">
+  <!-- this is very important -->
   <meta charset="UTF-8">
   <title>Hello World!</title>
 
   <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
   <link rel="stylesheet" href="node_modules/tether/dist/css/tether.min.css" />
+  <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css" />
   <link rel="stylesheet" href="src/assets/styles/sidebar-fixed.min.css" />
   <link rel="stylesheet" href="src/assets/styles/site.min.css" />
 </head>
 
 <body>
-  <app>Loading...</app>
+  <app>
+    <div class="text-xs-center center-block">
+      <i class="fa fa-spinner fa-spin fa-3x "> </i>
+      <h5>Loading...</h5>
+    </div>
+  </app>
 </body>
 
 <!-- 1. Load libraries -->
