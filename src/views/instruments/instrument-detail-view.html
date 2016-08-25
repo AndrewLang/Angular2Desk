@@ -1,0 +1,77 @@
+
+<div *ngIf="Instrument">
+    <div id="instrumentDetail" class="card">
+        <div class="card-header">
+            Details for {{Instrument.Manufacturer}} {{Instrument.Model}} {{Instrument.Type}}
+        </div>
+        <div class="card-block full-card-body">
+            <div class="row">
+                <div *ngIf="Instrument.Manufacturer">
+                    <div class="col-md-4">
+                        Manufacturer:
+                    </div>
+                    <div class="col-md-8">
+                        {{Instrument.Manufacturer}}
+                    </div>
+                </div>
+
+                <div *ngIf="Instrument.Model">
+                    <div class="col-md-4">
+                        Model:
+                    </div>
+                    <div class="col-md-8">
+                        {{Instrument.Model}}
+                    </div>
+                </div>
+
+                <div *ngIf="Instrument.SerialNumber">
+                    <div class="col-md-4">
+                        Serial Number:
+                    </div>
+                    <div class="col-md-8">
+                        {{Instrument.SerialNumber}}
+                    </div>
+                </div>
+
+                <div *ngIf="Instrument.FirmwareVersion">
+                    <div class="col-md-4">
+                        Firmware Version:
+                    </div>
+                    <div class="col-md-8">
+                        {{Instrument.FirmwareVersion}}
+                    </div>
+                </div>
+            </div>
+
+            <hr *ngIf="Instrument.Addresses" />
+            <div class="row" *ngIf="Instrument.Addresses">
+                <h5 class="card-title">Connection Strings</h5>
+                <p class="card-subtitle">VISA Addresses</p>
+
+                <div *ngFor="#address of Instrument.Addresses">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p class="card-text"><span class="fa fa-check-circle fa-fw success-icon"></span> {{address.Address}}</p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <hr *ngIf="Instrument.Drivers" />
+            <div class="row" *ngIf="Instrument.Drivers">
+                <h5 class="card-title">Installed Drivers</h5>
+
+                <div *ngFor="#driver of Instrument.Drivers.Versions">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p class="card-text">{{driver}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>

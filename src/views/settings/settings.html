@@ -1,1 +1,30 @@
-<h2>settings</h2>
+﻿<nav class="navbar navbar-dark bg-primary">
+    <div class="navbar-brand">
+        <a id="toggleSidebar" data-toggle="offcanvas" class="handCursor logo hidden-md-up" (click)="toggleSidebar()">
+            <span *ngIf="!IsSidebarVisible" class="fa fa-chevron-right fa-fw"></span>
+            <i *ngIf="IsSidebarVisible" class="fa fa-chevron-left fa-fw"></i>
+        </a>
+    </div>
+
+    <h4 class="navbar-brand">Settings </h4>
+    <ul class="nav navbar-nav">
+        <li class="nav-item active">
+            <a class="nav-link" href="#" title="Options">
+                <i class="fa fa-cogs fa-fw"></i> <span class="hidden-sm-down">Options</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#" title="Aliases">
+                <i class="fa fa-at fa-fw"></i> <span class="hidden-sm-down">Aliases</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#" title="VISA Conflict Manager">
+                <i class="fa fa-compress fa-fw"></i> <span class="hidden-sm-down">VISA Confilict Manager</span>
+            </a>
+        </li>
+    </ul>
+</nav>
+<div>
+    <h4>settings</h4>
+</div>
