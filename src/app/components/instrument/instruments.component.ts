@@ -10,7 +10,7 @@ import {SidebarService}                     from '../services/SidebarService';
 
 
 @Component({
-    templateUrl: 'views/instruments/instruments.html',
+    templateUrl: 'src/views/instruments/instruments.html',
     directives: [ROUTER_DIRECTIVES],
     providers: [InstrumentListComponent, SidebarService]
 })

@@ -5,7 +5,7 @@ import {SidebarService}                     from './services/SidebarService';
 
 @Component({
     selector: 'app',
-    templateUrl: 'views/home.html',    
+    templateUrl: 'src/views/home.html',    
     providers:[ SidebarService]
 })
 export class AppComponent {

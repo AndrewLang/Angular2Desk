@@ -1,7 +1,7 @@
 ﻿import {Component, OnInit} from '@angular/core';
 
 @Component({
-    templateUrl: '/views/ChassisDetail/',
+    templateUrl: '/src/views/ChassisDetail/',
 
 })
 export class ChassisDetailComponent {}

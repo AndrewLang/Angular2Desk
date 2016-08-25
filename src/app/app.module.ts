@@ -12,7 +12,7 @@ import {SettingsComponent}                  from './components/setting/settings.
 import {HelpComponent}                      from './components/help/help.component';
 import { routing, appRoutingProviders }     from './app.routing'
 
-import {ErrorHandlingService}   from './services/ErrorHandlingService';
+import {ErrorHandlingService}               from './services/ErrorHandlingService';
 import {DataService}                        from './services/DataService';
 
 @NgModule({

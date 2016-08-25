@@ -6,13 +6,9 @@ import {SettingDetailComponent}          from './setting-detail.component';
 import {SidebarService}                  from '../services/SidebarService';
 
 @Component({
-    templateUrl: 'views/settings/settings.html',
+    templateUrl: 'src/views/settings/settings.html',
     directives: [ROUTER_DIRECTIVES]
 })
-/*@RouteConfig([
-        { path: '/', name: 'Settings', component: SettingsListComponent, useAsDefault: true },
-        { path: '/:id', name: 'SettingDetail', component: SettingDetailComponent }
-])*/
 export class SettingsComponent {
     IsSidebarVisible: boolean;
 
