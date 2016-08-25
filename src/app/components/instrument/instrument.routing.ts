@@ -1,9 +1,9 @@
 import { ModuleWithProviders }              from '@angular/core';
 import { Routes, RouterModule }             from '@angular/router';
 
-import {InstrumentListComponent}    from './instrument-list.component';
+import {InstrumentListComponent}            from './instruments-list.component';
 
-const instrumentRoutes : Routes = [ 
+export const instrumentRoutes : Routes = [ 
     {path:'', component:InstrumentListComponent}
 ];
 

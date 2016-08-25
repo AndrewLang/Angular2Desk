@@ -9,7 +9,7 @@ import {ChassisComponent}                   from './components/chassis/chassis.c
 import {SettingsComponent}                  from './components/setting/settings.component';
 import {HelpComponent}                      from './components/help/help.component';
 
-import {instrumentRoutes}  from './components/instrument/instrument.routing';
+import {instrumentRoutes}                   from './components/instrument/instrument.routing';
 
 const rootRoutes: Routes = [
     { path: '', redirectTo: '/instruments', pathMatch:'full' },
@@ -22,7 +22,7 @@ const rootRoutes: Routes = [
 
 const appRoutes: Routes = [
    ...rootRoutes,
-   .,,instrumentRoutes
+   ...instrumentRoutes
 ];
 
 export const appRoutingProviders: any[] = [
