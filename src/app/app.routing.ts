@@ -9,14 +9,20 @@ import {ChassisComponent}                   from './components/chassis/chassis.c
 import {SettingsComponent}                  from './components/setting/settings.component';
 import {HelpComponent}                      from './components/help/help.component';
 
-const appRoutes: Routes = [
+import {instrumentRoutes}  from './components/instrument/instrument.routing';
+
+const rootRoutes: Routes = [
     { path: '', redirectTo: '/instruments', pathMatch:'full' },
     { path: 'home', component:AppComponent},
     { path: 'instruments', component: InstrumentsComponent },
     { path: 'chassis', component: ChassisComponent },
     { path: 'settings', component: SettingsComponent },
-    { path: 'help', component: HelpComponent },
-    
+    { path: 'help', component: HelpComponent },    
+];
+
+const appRoutes: Routes = [
+   ...rootRoutes,
+   .,,instrumentRoutes
 ];
 
 export const appRoutingProviders: any[] = [
