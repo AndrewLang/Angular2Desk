@@ -16,11 +16,11 @@ import {SidebarService}                     from '../services/SidebarService';
 })
 export class InstrumentsComponent implements OnInit, OnDestroy {
     IsSidebarVisible: boolean;
-    message :string;
+    message: string;
 
     constructor(private mSidebarService: SidebarService) {
-        this.IsSidebarVisible = mSidebarService.IsSidebarVisible; 
-        console.log( "Constructor of InstrumentsComponent.");
+        this.IsSidebarVisible = mSidebarService.IsSidebarVisible;
+        console.log("Constructor of InstrumentsComponent.");
     }
 
     toggleSidebar() {
@@ -32,7 +32,7 @@ export class InstrumentsComponent implements OnInit, OnDestroy {
     }
 
     ngOnInit() {
-            this.message = "test OnInit";
+        this.message = "test OnInit";
     }
     ngOnDestroy() {
 

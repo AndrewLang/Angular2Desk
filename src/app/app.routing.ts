@@ -12,7 +12,7 @@ import {HelpComponent}                      from './components/help/help.compone
 import {instrumentRoutes}                   from './components/instrument/instrument.routing';
 
 const rootRoutes: Routes = [
-    { path: '', redirectTo: '/instruments/list', pathMatch:'full' },
+    { path: '', redirectTo: '/home', pathMatch:'full' },
     { path: 'home', component:AppComponent},
     { path: 'instruments', component: InstrumentsComponent },
     { path: 'chassis', component: ChassisComponent },
