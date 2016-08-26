@@ -1,5 +1,5 @@
 ﻿import {Component}                                      from '@angular/core';
-import {Routes, RouterModule, ROUTER_DIRECTIVES}             from '@angular/router';
+import {Routes, RouterModule, ROUTER_DIRECTIVES}        from '@angular/router';
 
 import {ChassisListComponent}                           from './chassis-list.component';
 import {ChassisDetailComponent}                         from './chassis-detail.component';

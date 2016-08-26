@@ -20,7 +20,7 @@ export class InstrumentsComponent implements OnInit, OnDestroy {
 
     constructor(private mSidebarService: SidebarService) {
         this.IsSidebarVisible = mSidebarService.IsSidebarVisible; 
-               
+        console.log( "Constructor of InstrumentsComponent.");
     }
 
     toggleSidebar() {

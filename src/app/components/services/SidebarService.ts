@@ -1,17 +1,17 @@
 ﻿
-import {EventEmitter, Injectable}             from '@angular/core';
+import {Output, EventEmitter, Injectable}             from '@angular/core';
 
 @Injectable()
 export class SidebarService {
     IsSidebarVisible: boolean = false;
-   public onVisibleChanged: EventEmitter<any> = new EventEmitter();
+    @Output() onVisibleChanged: EventEmitter<any> = new EventEmitter();
 
     ShowSidebar(): void {
         this.IsSidebarVisible = true;
-        this.onVisibleChanged.next(true);
+        this.onVisibleChanged.emit({ value:true});
     }
     HideSidebar(): void {
         this.IsSidebarVisible = false;
-        this.onVisibleChanged.next(false);
+        this.onVisibleChanged.emit({value:false});
     }
 }

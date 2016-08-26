@@ -5,7 +5,7 @@ import {Instrument}                     from '../../models/Instrument';
 
 @Component({
     selector: 'instrument-detail',
-    templateUrl: '/views/InstrumentDetail/',
+    templateUrl: 'src/views/instruments/instrument-detail-view.html',
 
 })
 export class InstrumentDetailComponent implements OnInit {

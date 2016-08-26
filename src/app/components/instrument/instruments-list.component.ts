@@ -8,7 +8,7 @@ import {InstrumentDetailComponent}      from './instrument-detail.component';
 
 @Component({
     selector: 'instrument-list',
-    templateUrl: '/views/InstrumentList/',
+    templateUrl: 'src/views/instruments/instrument-list-view.html',
     directives: [ROUTER_DIRECTIVES, InstrumentDetailComponent],
     providers: [DataService, ErrorHandlingService]
 })
@@ -20,7 +20,9 @@ export class InstrumentListComponent implements OnInit {
     SelectedInstrument: Instrument;
 
     constructor(private mDataService: DataService,
-        private mRouter: Router) { }
+        private mRouter: Router) { 
+            console.log( "Constructor of InstrumentListComponent.");
+        }
 
 
     ngOnInit() {
