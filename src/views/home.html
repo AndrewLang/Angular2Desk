@@ -11,17 +11,17 @@
 
         <ul class="nav hidden-md-down nav-stacked nav-pills"  id="lg-menu">
             <li class="nav-item">
-                <a routerLink="/instruments" class="nav-link" title="Instruments">
+                <a routerLink="/instruments" routerLinkActive="active" class="nav-link" title="Instruments">
                     <span class="fa-stack fa-lg"><i class="fa fa-server fa-fw fa-stack-1x"></i></span>     <span *ngIf="ShowFullSidebar">Instruments</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a routerLink="/chassis" class="nav-link" title="Chassis">
+                <a routerLink="/chassis" routerLinkActive="active" class="nav-link" title="Chassis">
                     <span class="fa-stack fa-lg"><i class="fa fa-archive fa-fw fa-stack-1x"></i></span> <span *ngIf="ShowFullSidebar">Chassis</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a routerLink="/settings" class="nav-link" title="Settings">
+                <a routerLink="/settings" routerLinkActive="active" class="nav-link" title="Settings">
                     <span class="fa-stack fa-lg"><i class="fa fa-cog fa-fw fa-stack-1x"></i></span> <span *ngIf="ShowFullSidebar">Settings</span>
                 </a>
             </li>
@@ -29,17 +29,17 @@
 
         <ul class="nav hidden-md-down nav-stacked nav-pills" id="sidebar-footer" title="Help">
             <li class="nav-item">
-                <a routerLink="/help" class="nav-link">
+                <a routerLink="/help" routerLinkActive="active" class="nav-link">
                     <span class="fa-stack fa-lg"><i class="fa fa-question-circle fa-fw fa-stack-1x"></i></span> <span *ngIf="ShowFullSidebar">Help</span>
                 </a>
             </li>
         </ul>
         <!-- tiny only nav-->
         <ul class="nav hidden-lg-up" id="xs-menu">
-            <li><a routerLink="/instruments" class="text-center"><span class="fa-stack fa-lg"><i class="fa fa-server fa-fw fa-stack-1x"></i></span> </a></li>
-            <li><a routerLink="/chassis" class="text-center"><span class="fa-stack fa-lg"><i class="fa fa-archive fa-fw fa-stack-1x"></i></span></a></li>
-            <li><a routerLink="/settings" class="text-center"><span class="fa-stack fa-lg"><i class="fa fa-cog fa-fw fa-stack-1x"></i></span></a></li>
-            <li><a routerLink="/help" class="text-center"><span class="fa-stack fa-lg"><i class="fa fa-question-circle fa-fw fa-stack-1x"></i></span></a></li>
+            <li><a routerLink="/instruments" routerLinkActive="active" class="text-center"><span class="fa-stack fa-lg"><i class="fa fa-server fa-fw fa-stack-1x"></i></span> </a></li>
+            <li><a routerLink="/chassis" routerLinkActive="active" class="text-center"><span class="fa-stack fa-lg"><i class="fa fa-archive fa-fw fa-stack-1x"></i></span></a></li>
+            <li><a routerLink="/settings" routerLinkActive="active" class="text-center"><span class="fa-stack fa-lg"><i class="fa fa-cog fa-fw fa-stack-1x"></i></span></a></li>
+            <li><a routerLink="/help" routerLinkActive="active" class="text-center"><span class="fa-stack fa-lg"><i class="fa fa-question-circle fa-fw fa-stack-1x"></i></span></a></li>
         </ul>
 
     </div>
