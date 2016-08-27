@@ -6,7 +6,7 @@ import {InstrumentDetailComponent}          from './instrument-detail.component'
 
 export const instrumentRoutes: Routes = [
     {
-        path: 'list', component: InstrumentListComponent
+        path: '', component: InstrumentListComponent
     },
     { path: 'instrument/:id', component:InstrumentDetailComponent }
 ];

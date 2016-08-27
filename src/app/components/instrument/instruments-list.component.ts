@@ -7,7 +7,7 @@ import {Instrument}                     from '../../models/Instrument';
 import {InstrumentDetailComponent}      from './instrument-detail.component';
 
 @Component({
-    selector: 'instrument-list',
+    //selector: 'instrument-list',
     templateUrl: 'src/views/instruments/instrument-list-view.html',
     directives: [ROUTER_DIRECTIVES, InstrumentDetailComponent],
     providers: [DataService, ErrorHandlingService]

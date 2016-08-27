@@ -24,7 +24,7 @@ gulp.task('scripts', function () {
   return tsProject.src()
     .pipe(ts(tsProject))        // compile with ts configuration
     .pipe(concat('app.js'))
-    .pipe(uglify())
+    //.pipe(uglify())
     .pipe(gulp.dest(dist));
 });
 
