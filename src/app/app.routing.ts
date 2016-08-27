@@ -11,18 +11,20 @@ import {HelpComponent}                      from './components/help/help.compone
 import {InstrumentListComponent}            from './components/instrument/instruments-list.component';
 
 import {instrumentRoutes}                   from './components/instrument/instrument.routing';
+import {TestComponent} from './components/test/test.component.ts';
 
 const rootRoutes: Routes = [
-    { path: '', redirectTo: '/instruments', pathMatch:'full' },
-    { path: 'home', component:AppComponent},
-    { path: 'instruments', component: InstrumentsComponent,
-        children:[
-            { path: '', component: InstrumentListComponent },
-        ]
-    },
-    { path: 'chassis', component: ChassisComponent },
-    { path: 'settings', component: SettingsComponent },
-    { path: 'help', component: HelpComponent },    
+    // { path: '', redirectTo: '/chassis', pathMatch:'full' },
+    // { path :'', component:TestComponent},
+    // { path: 'home', component:AppComponent},
+    // { path: 'instruments', component: InstrumentsComponent,
+    //     children:[
+    //         { path: '', component: InstrumentListComponent },
+    //     ]
+    // },
+    // { path: 'chassis', component: ChassisComponent },
+    // { path: 'settings', component: SettingsComponent },
+    // { path: 'help', component: HelpComponent },    
 ];
 
 const appRoutes: Routes = [

@@ -11,8 +11,8 @@ import {SidebarService}                     from '../services/SidebarService';
 
 @Component({
     templateUrl: 'src/views/instruments/instruments.html',
-    directives: [ROUTER_DIRECTIVES],
-    providers: [InstrumentListComponent, SidebarService]
+    directives: [ROUTER_DIRECTIVES, InstrumentListComponent],
+    providers: [ SidebarService]
 })
 export class InstrumentsComponent implements OnInit, OnDestroy {
     IsSidebarVisible: boolean;

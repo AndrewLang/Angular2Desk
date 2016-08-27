@@ -8,8 +8,9 @@ import {InstrumentDetailComponent}      from './instrument-detail.component';
 
 @Component({
     //selector: 'instrument-list',
-    templateUrl: 'src/views/instruments/instrument-list-view.html',
-    directives: [ROUTER_DIRECTIVES, InstrumentDetailComponent],
+    //templateUrl: 'src/views/instruments/instrument-list-view.html',
+    template:'<h2>instrument list</h2>',
+    //directives: [ROUTER_DIRECTIVES, InstrumentDetailComponent],
     providers: [DataService, ErrorHandlingService]
 })
 export class InstrumentListComponent implements OnInit {

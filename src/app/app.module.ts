@@ -10,15 +10,17 @@ import {InstrumentsComponent}               from './components/instrument/instru
 import {ChassisComponent}                   from './components/chassis/chassis.component';
 import {SettingsComponent}                  from './components/setting/settings.component';
 import {HelpComponent}                      from './components/help/help.component';
-import { routing, appRoutingProviders }     from './app.routing'
-
+import { routing, appRoutingProviders }     from './app.routing';
+import {TestComponent} from './components/test/test.component';
 import {ErrorHandlingService}               from './services/ErrorHandlingService';
 import {DataService}                        from './services/DataService';
 
+import {InstrumentListComponent}               from './components/instrument/instruments-list.component';
+
 @NgModule({
     imports: [BrowserModule,FormsModule,RouterModule, routing],
-    declarations: [AppComponent,InstrumentsComponent, ChassisComponent,SettingsComponent,HelpComponent],
+    declarations: [AppComponent,InstrumentsComponent, ChassisComponent,SettingsComponent,HelpComponent,InstrumentListComponent, TestComponent],
     providers:[ appRoutingProviders,DataService, ErrorHandlingService,HTTP_PROVIDERS ],
-    bootstrap: [AppComponent]
+    bootstrap: [TestComponent]
 })
 export class AppModule { }
