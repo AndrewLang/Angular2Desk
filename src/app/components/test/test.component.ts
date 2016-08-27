@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-home',
+  selector: 'app',
   template: `
   <h2>Home</h2> 
   <p>{{message}}</p>
@@ -9,4 +9,9 @@ import { Component } from '@angular/core';
 })
 export class TestComponent { 
   message = "this is a message for the home.";
+
+  constructor()
+  {
+    console.log("test Component");
+  }
 }

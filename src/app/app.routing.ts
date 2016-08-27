@@ -15,7 +15,8 @@ import {TestComponent} from './components/test/test.component.ts';
 
 const rootRoutes: Routes = [
     // { path: '', redirectTo: '/chassis', pathMatch:'full' },
-    // { path :'', component:TestComponent},
+    { path: '', redirectTo: '/test', pathMatch:'full' },
+    { path :'test', component:TestComponent},
     // { path: 'home', component:AppComponent},
     // { path: 'instruments', component: InstrumentsComponent,
     //     children:[
