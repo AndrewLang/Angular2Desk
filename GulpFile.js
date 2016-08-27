@@ -53,7 +53,7 @@ gulp.task('sass:watch', function () {
 });
 
 gulp.task('start', function (callback) {
-  sequence('clean', 'scripts', "sass", "electron", callback);
+  sequence('clean', /*'scripts',*/ "sass", "electron", callback);
 });
 
 // backup of npm

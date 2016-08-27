@@ -29,8 +29,8 @@ const rootRoutes: Routes = [
 ];
 
 const appRoutes: Routes = [
-   ...rootRoutes,
-   ...instrumentRoutes
+//    ...rootRoutes,
+//    ...instrumentRoutes
 ];
 
 export const appRoutingProviders: any[] = [

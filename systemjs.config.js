@@ -3,13 +3,22 @@
  * Adjust as necessary for your application needs.
  */
 (function(global) {
+
+   var ngVer = '@2.0.0-rc.5'; // lock in the angular package version; do not let it float to current!
+  var routerVer = '@3.0.0-rc.1'; // lock router version
+  var formsVer = '@0.3.0'; // lock forms version
+  var routerDeprecatedVer = '@2.0.0-rc.2'; // temporarily until we update all the guides
+
   // map tells the System loader where to look for things
   var map = {
     'app':                        'src/app', // 'dist',
     '@angular':                   'node_modules/@angular',
+    '@angular/router':            'node_modules/@angular/router' ,
+    '@angular/forms':             'node_modules/@angular/forms' ,
     'angular2-in-memory-web-api': 'node_modules/angular2-in-memory-web-api',
     'rxjs':                       'node_modules/rxjs'
   };
+  
   // packages tells the System loader how to load when no filename and/or no extension
   var packages = {
     'app':                        { main: 'main.js',  defaultExtension: 'js' },
