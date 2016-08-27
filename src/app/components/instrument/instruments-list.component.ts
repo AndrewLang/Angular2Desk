@@ -12,8 +12,6 @@ import {InstrumentDetailComponent}      from './instrument-detail.component';
     directives: [ROUTER_DIRECTIVES, InstrumentDetailComponent],
     providers: [DataService, ErrorHandlingService]
 })
-
-@Injectable()
 export class InstrumentListComponent implements OnInit {
     
     Instruments: Instrument[];
@@ -26,7 +24,7 @@ export class InstrumentListComponent implements OnInit {
 
 
     ngOnInit() {
-        var command = { Name: "GetInstruments", Parameters: {} };
+        /*var command = { Name: "GetInstruments", Parameters: {} };
         this.mDataService.Post("/api/commands", command, response=> {
              console.log( response );
             this.Instruments = response;
@@ -37,7 +35,7 @@ export class InstrumentListComponent implements OnInit {
                 this.SelectedInstrument.IsSelected = true;
             }
             console.log(this.SelectedInstrument);
-        });
+        }); */
     }
 
     showDetail(instrument: Instrument): void {

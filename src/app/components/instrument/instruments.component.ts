@@ -33,6 +33,7 @@ export class InstrumentsComponent implements OnInit, OnDestroy {
 
     ngOnInit() {
         this.message = "test OnInit";
+        console.log( "instrument component " + this.message);
     }
     ngOnDestroy() {
 

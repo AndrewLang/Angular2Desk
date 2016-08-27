@@ -12,6 +12,7 @@ var shell = require('gulp-shell');
 var uglify = require('gulp-uglify');
 //var gulpIf   = require('gulp-if');
 var del = require('del');
+var dist = 'dist';
 
 gulp.task('clean', function () {
   return del.sync('dist/*.*');
@@ -20,18 +21,17 @@ gulp.task('clean', function () {
 gulp.task('scripts', function () {
   var folder = 'src/app/';
   var tsProject = ts.createProject('tsconfig.json');
-  var dist = 'dist';
+  
   return tsProject.src()
     .pipe(ts(tsProject))        // compile with ts configuration
     .pipe(concat('app.js'))
-    //.pipe(uglify())
+    .pipe(uglify())
     .pipe(gulp.dest(dist));
 });
 
 
 gulp.task('sass', function () {
-  var folder = 'src/assets/styles/';
-  var dist = 'dist';
+  var folder = 'src/assets/styles/';  
   return merge(
     gulp.src(folder + '*.scss')
       .pipe(sass().on('error', sass.logError))

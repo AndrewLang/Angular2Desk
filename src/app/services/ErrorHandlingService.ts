@@ -6,7 +6,7 @@ export class ErrorHandlingService {
     constructor() {
     }
 
-    HandleError(error) {
+    HandleError(error:any) {
         console.log(error);
     }
 }
