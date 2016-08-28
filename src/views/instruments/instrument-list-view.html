@@ -21,7 +21,7 @@
                 </ul>
             </div>
             <div id="instrumentList" class="list-group list-group-flush full-card-body">
-                <button *ngFor="let instrument of Instruments" class="list-group-item" [ngClass]="{active:instrument.IsSelected}" (click)="showDetail(instrument)">
+                <button *ngFor="let instrument of Instruments; let isEven=even;" class="list-group-item" [ngClass]="{active:instrument.IsSelected,evenBg:isEven}" (click)="selectInstrument(instrument)">
                     <div class="row">
                         <div class="media">
                             <div class="media-left media-middle">
@@ -79,7 +79,8 @@
             "N5182A Signal Generator" connected, do you want <a class="btn btn-info btn-sm">Add</a> it to current profile?
         </div>
         <div class="list-group list-group-flush">
-            <div *ngFor="let instrument of Instruments let index=index" class="list-group-item bg-gray" [ngClass]="{evenBg:IsEven(index)}" >
+            <div *ngFor="let instrument of Instruments; let isEven=even;" class="list-group-item bg-gray" [ngClass]="{evenBg:isEven}"
+                 (click)="selectInstrument(instrument)" >
                 <div class="row" >
                     <div class="media">
                         <div class="media-left">
@@ -119,8 +120,6 @@
                                     </div>
                                 </div>
                             </div>
-
-
                         </div>
                     </div>
                 </div>

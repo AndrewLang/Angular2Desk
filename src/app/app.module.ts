@@ -1,6 +1,6 @@
 import { NgModule }                         from '@angular/core';
 import { BrowserModule }                    from '@angular/platform-browser';
-import { APP_BASE_HREF }                    from '@angular/common';
+import { APP_BASE_HREF,NgClass }            from '@angular/common';
 import { FormsModule }                      from '@angular/forms';
 import { Routes, RouterModule }             from '@angular/router';
 import {Http, Headers,HTTP_PROVIDERS} from '@angular/http';

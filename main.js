@@ -5,7 +5,7 @@ const app = electron.app;
 const BrowserWindow = electron.BrowserWindow;
 
 let mainWindow;
-let debug = true;
+let debug = false;
 
 function createWindow(){
     mainWindow = new BrowserWindow({ width:1200, height:800});
