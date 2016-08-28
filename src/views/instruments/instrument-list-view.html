@@ -21,7 +21,7 @@
                 </ul>
             </div>
             <div id="instrumentList" class="list-group list-group-flush full-card-body">
-                <button *ngFor="#instrument of Instruments" class="list-group-item" [ngClass]="{active:instrument.IsSelected}" (click)="showDetail(instrument)">
+                <button *ngFor="let instrument of Instruments" class="list-group-item" [ngClass]="{active:instrument.IsSelected}" (click)="showDetail(instrument)">
                     <div class="row">
                         <div class="media">
                             <div class="media-left media-middle">
@@ -79,7 +79,7 @@
             "N5182A Signal Generator" connected, do you want <a class="btn btn-info btn-sm">Add</a> it to current profile?
         </div>
         <div class="list-group list-group-flush">
-            <div *ngFor="#instrument of Instruments #index=index" class="list-group-item bg-gray" [ngClass]="{evenBg:IsEven(index)}" >
+            <div *ngFor="let instrument of Instruments let index=index" class="list-group-item bg-gray" [ngClass]="{evenBg:IsEven(index)}" >
                 <div class="row" >
                     <div class="media">
                         <div class="media-left">
@@ -97,7 +97,7 @@
                                 <h5 class="card-title">Connection Strings</h5>
                                 <p class="card-subtitle">VISA Addresses</p>
 
-                                <div *ngFor="#address of instrument.Addresses">
+                                <div *ngFor="let address of instrument.Addresses">
                                     <div class="row">
                                         <div class="col-md-12">
                                             <p class="card-text"><span class="fa fa-check-circle fa-fw btn-success-outline"></span> {{address.Address}}</p>
@@ -111,7 +111,7 @@
                             <div class="row" *ngIf="instrument.Drivers">
                                 <h5 class="card-title">Installed Drivers</h5>
 
-                                <div *ngFor="#driver of instrument.Drivers.Versions">
+                                <div *ngFor="let driver of instrument.Drivers.Versions">
                                     <div class="row">
                                         <div class="col-md-12">
                                             <p class="card-text">{{driver}}</p>

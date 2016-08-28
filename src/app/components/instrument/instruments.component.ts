@@ -16,7 +16,6 @@ import {SidebarService}                     from '../services/SidebarService';
 })
 export class InstrumentsComponent implements OnInit, OnDestroy {
     IsSidebarVisible: boolean;
-    message: string;
 
     constructor(private mSidebarService: SidebarService) {
         this.IsSidebarVisible = mSidebarService.IsSidebarVisible;
@@ -32,8 +31,6 @@ export class InstrumentsComponent implements OnInit, OnDestroy {
     }
 
     ngOnInit() {
-        this.message = "test OnInit";
-        console.log( "instrument component " + this.message);
     }
     ngOnDestroy() {
 

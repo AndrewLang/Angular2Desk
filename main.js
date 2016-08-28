@@ -17,7 +17,7 @@ function createWindow(){
 
     if( debug ){
         mainWindow.webContents.openDevTools();
-        mainWindow.maximize();
+        //mainWindow.maximize();
     }
 }
 

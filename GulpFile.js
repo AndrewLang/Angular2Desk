@@ -13,22 +13,31 @@ var uglify = require('gulp-uglify');
 //var gulpIf   = require('gulp-if');
 var del = require('del');
 var dist = 'dist';
+var folder = 'src/app/';
 
 gulp.task('clean', function () {
-  return del.sync('dist/*.*');
+  return del([
+    'src/app/*.js',
+    'src/app/*.map'
+  ]);
+  //return del.sync('dist/*.*');
 });
 
-gulp.task('scripts', function () {
-  var folder = 'src/app/';
+gulp.task('scripts', function () {  
   var tsProject = ts.createProject('tsconfig.json');
   
   return tsProject.src()
     .pipe(ts(tsProject))        // compile with ts configuration
-    .pipe(concat('app.js'))
+    .js
+    .pipe(concat('main.js'))
     .pipe(uglify())
     .pipe(gulp.dest(dist));
 });
 
+gulp.task('compile', function(){
+  return gulp.src('/')
+      .pipe(shell('tsc && concurrently'));
+});
 
 gulp.task('sass', function () {
   var folder = 'src/assets/styles/';  
@@ -53,7 +62,7 @@ gulp.task('sass:watch', function () {
 });
 
 gulp.task('start', function (callback) {
-  sequence('clean', /*'scripts',*/ "sass", "electron", callback);
+  sequence('clean', "compile", "sass", "electron", callback);
 });
 
 // backup of npm

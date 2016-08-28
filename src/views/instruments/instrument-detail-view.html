@@ -48,7 +48,7 @@
                 <h5 class="card-title">Connection Strings</h5>
                 <p class="card-subtitle">VISA Addresses</p>
 
-                <div *ngFor="#address of Instrument.Addresses">
+                <div *ngFor="let address of Instrument.Addresses">
                     <div class="row">
                         <div class="col-md-12">
                             <p class="card-text"><span class="fa fa-check-circle fa-fw success-icon"></span> {{address.Address}}</p>
@@ -62,7 +62,7 @@
             <div class="row" *ngIf="Instrument.Drivers">
                 <h5 class="card-title">Installed Drivers</h5>
 
-                <div *ngFor="#driver of Instrument.Drivers.Versions">
+                <div *ngFor="let driver of Instrument.Drivers.Versions">
                     <div class="row">
                         <div class="col-md-12">
                             <p class="card-text">{{driver}}</p>

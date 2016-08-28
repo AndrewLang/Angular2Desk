@@ -19,9 +19,11 @@ import {InstrumentListComponent}               from './components/instrument/ins
 
 @NgModule({
     imports: [BrowserModule,FormsModule,RouterModule, routing],
-    declarations: [AppComponent,InstrumentsComponent, ChassisComponent,SettingsComponent,HelpComponent,InstrumentListComponent, TestComponent],
+    declarations: [AppComponent,
+    InstrumentsComponent, ChassisComponent,SettingsComponent,HelpComponent,InstrumentListComponent, 
+    TestComponent],
     providers:[ appRoutingProviders,DataService, ErrorHandlingService,HTTP_PROVIDERS ],
-    bootstrap: [TestComponent]
+    bootstrap: [AppComponent]
 })
 export class AppModule { 
     constructor(){

@@ -3,12 +3,7 @@
  * Adjust as necessary for your application needs.
  */
 (function(global) {
-
-   var ngVer = '@2.0.0-rc.5'; // lock in the angular package version; do not let it float to current!
-  var routerVer = '@3.0.0-rc.1'; // lock router version
-  var formsVer = '@0.3.0'; // lock forms version
-  var routerDeprecatedVer = '@2.0.0-rc.2'; // temporarily until we update all the guides
-
+  
   // map tells the System loader where to look for things
   var map = {
     'app':                        'src/app', // 'dist',

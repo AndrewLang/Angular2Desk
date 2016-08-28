@@ -1,5 +1,5 @@
-
-
+/*
+*/ 
 import { ModuleWithProviders }              from '@angular/core';
 import { Routes, RouterModule }             from '@angular/router';
 
@@ -11,26 +11,26 @@ import {HelpComponent}                      from './components/help/help.compone
 import {InstrumentListComponent}            from './components/instrument/instruments-list.component';
 
 import {instrumentRoutes}                   from './components/instrument/instrument.routing';
-import {TestComponent} from './components/test/test.component.ts';
+import {TestComponent}                      from './components/test/test.component';
 
 const rootRoutes: Routes = [
-    // { path: '', redirectTo: '/chassis', pathMatch:'full' },
-    { path: '', redirectTo: '/test', pathMatch:'full' },
-    { path :'test', component:TestComponent},
-    // { path: 'home', component:AppComponent},
-    // { path: 'instruments', component: InstrumentsComponent,
-    //     children:[
-    //         { path: '', component: InstrumentListComponent },
-    //     ]
-    // },
-    // { path: 'chassis', component: ChassisComponent },
-    // { path: 'settings', component: SettingsComponent },
-    // { path: 'help', component: HelpComponent },    
+    { path: '', redirectTo: '/instruments', pathMatch: 'full' },
+    { path: 'test', component: TestComponent },
+    { path: 'home', component: AppComponent },
+    {
+        path: 'instruments', component: InstrumentsComponent,
+        children: [
+            { path: '', component: InstrumentListComponent },
+        ]
+    },
+    { path: 'chassis', component: ChassisComponent },
+    { path: 'settings', component: SettingsComponent },
+    { path: 'help', component: HelpComponent },
 ];
 
 const appRoutes: Routes = [
-//    ...rootRoutes,
-//    ...instrumentRoutes
+    ...rootRoutes,
+    ...instrumentRoutes
 ];
 
 export const appRoutingProviders: any[] = [
