@@ -25,7 +25,7 @@
                     <div class="row">
                         <div class="media">
                             <div class="media-left media-middle">
-                                <img class="img-rounded instrumentThumb" src="~/images/PROD-2372474-33.jpg" />
+                                <img class="img-rounded instrumentThumb" [src]="instrument.ImageUrl" />
                                 <span class="fa fa-check-circle fa-2x fa-fw success-icon notification"></span>
                             </div>
                             <div class="media-body">
@@ -83,7 +83,7 @@
                 <div class="row" >
                     <div class="media">
                         <div class="media-left">
-                            <img class="media-object img-rounded instrumentThumbBig" src="~/images/PROD-2372474-33.jpg" />
+                            <img class="media-object img-rounded instrumentThumbBig" [src]="instrument.ImageUrl" />
                             <span class="fa fa-check-circle fa-3x fa-fw success-icon notification-big"></span>
                         </div>
 

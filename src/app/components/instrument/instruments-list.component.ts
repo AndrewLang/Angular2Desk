@@ -15,7 +15,7 @@ import {InstrumentDetailComponent}      from './instrument-detail.component';
 })
 export class InstrumentListComponent implements OnInit {
     
-    Instruments: Instrument[];
+    Instruments: Instrument[] ;
     SelectedInstrument: Instrument;
 
     constructor(private mDataService: DataService,
@@ -37,6 +37,21 @@ export class InstrumentListComponent implements OnInit {
             }
             console.log(this.SelectedInstrument);
         }); */
+
+        /* Mock data */
+
+        this.Instruments= [];
+        for( var i = 1 ; i <=5; i++)
+        {
+            let data = new Instrument();
+            data.Id = i;
+            data.Model = "Instrument";
+            data.Manufacturer = "Keysight";
+            data.ImageUrl = "./src/assets/images/PROD-2372474-33.jpg";
+            if( i== 1)
+                data.IsSelected = true;
+            this.Instruments.push( data );
+        }
     }
 
     showDetail(instrument: Instrument): void {

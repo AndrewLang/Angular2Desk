@@ -6,7 +6,6 @@ import {SidebarService}                     from './services/SidebarService';
 @Component({
     selector: 'app',
     templateUrl: 'src/views/home.html',
-    //template:'<h2>app component</h2>',    
     providers:[SidebarService]
 })
 export class AppComponent implements OnInit, OnDestroy {
