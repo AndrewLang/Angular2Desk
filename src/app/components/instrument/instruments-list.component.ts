@@ -42,11 +42,11 @@ export class InstrumentListComponent implements OnInit {
         for (var i = 1; i <= 5; i++) {
             let data = new Instrument();
             data.Id = i;
-            data.Model = "Instrument";
+            data.Model = "Instrument" + i;
             data.Manufacturer = "Keysight";
             data.ImageUrl = "./src/assets/images/PROD-2372474-33.jpg";
             if (i == 1) {
-                //data.IsSelected = true;
+                data.IsSelected = true;
                 this.SelectedInstrument = data;
             }
             this.Instruments.push(data);
