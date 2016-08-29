@@ -3,8 +3,9 @@
     Model: string;
     Manufacturer: string;
     SerialNumber: string;
-    FirmwareVersion: string;
-    ImageUrl: string;
+    Firmware: string;
+    Description:string;
+    FullImageUrl: string;
     IsSelected: boolean;
     Addresses: Address[];
     Drivers: Driver[];

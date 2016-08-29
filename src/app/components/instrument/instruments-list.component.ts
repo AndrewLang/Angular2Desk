@@ -24,18 +24,18 @@ export class InstrumentListComponent implements OnInit {
 
 
     ngOnInit() {
-        /*var command = { Name: "GetInstruments", Parameters: {} };
-        this.mDataService.Post("/api/commands", command, response=> {
-             console.log( response );
-            this.Instruments = response;
-            console.log( this.Instruments);
-            
-            if (this.Instruments.length) {
-               this.SelectedInstrument = this.Instruments[0];
-                this.SelectedInstrument.IsSelected = true;
-            }
-            console.log(this.SelectedInstrument);
-        }); */
+        // var command = { Name: "ACE-DoGetInstruments" };
+        // this.mDataService.Post("http://localhost:14029/api/commands", command, response => {
+        //     console.log("api response: " + response);
+        //     this.Instruments = response.InstrumentsChanges;
+        //     console.log(this.Instruments);
+
+        //     if (this.Instruments) {
+        //         this.SelectedInstrument = this.Instruments[0];
+        //         this.SelectedInstrument.IsSelected = true;
+        //     }
+        //     console.log(this.SelectedInstrument);
+        // });
 
         /* Mock data */
         this.Instruments = [];
@@ -44,7 +44,7 @@ export class InstrumentListComponent implements OnInit {
             data.Id = i;
             data.Model = "Instrument" + i;
             data.Manufacturer = "Keysight";
-            data.ImageUrl = "./src/assets/images/PROD-2372474-33.jpg";
+            data.FullImageUrl = "./src/assets/images/PROD-2372474-33.jpg";
             if (i == 1) {
                 data.IsSelected = true;
                 this.SelectedInstrument = data;
@@ -85,5 +85,5 @@ export class InstrumentListComponent implements OnInit {
         this.SelectedInstrument = instrument;
 
     }
-    
+
 }
