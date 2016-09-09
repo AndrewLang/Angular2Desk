@@ -1,0 +1,22 @@
+$header-height:48px;
+#instrumentList.full-card-body {
+    height: calc(100% - #{$header-height});
+    overflow-y: auto;
+}
+
+#instrumentDetail .full-card-body {
+    height: calc(100% - #{$header-height});
+    overflow-y: auto;
+}
+
+.center-block {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+}
+
+.btn-link:focus,
+.btn-link:active:focus {
+    outline: none;
+}

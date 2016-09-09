@@ -35,4 +35,11 @@ export class InstrumentsComponent implements OnInit, OnDestroy {
     ngOnDestroy() {
 
     }
+
+    refresh(){
+
+    }
+    addInstrument(){
+        
+    }
 }

@@ -24,33 +24,33 @@ export class InstrumentListComponent implements OnInit {
 
 
     ngOnInit() {
-        // var command = { Name: "ACE-DoGetInstruments" };
-        // this.mDataService.Post("http://localhost:14029/api/commands", command, response => {
-        //     console.log("api response: " + response);
-        //     this.Instruments = response.InstrumentsChanges;
-        //     console.log(this.Instruments);
+        var command = { Name: "ACE-DoGetInstruments" };
+        this.mDataService.Post("http://localhost:14029/api/commands", command, response => {
+            console.log("api response: " + response);
+            this.Instruments = response.InstrumentsChanges;
+            console.log(this.Instruments);
 
-        //     if (this.Instruments) {
-        //         this.SelectedInstrument = this.Instruments[0];
-        //         this.SelectedInstrument.IsSelected = true;
-        //     }
-        //     console.log(this.SelectedInstrument);
-        // });
+            if (this.Instruments) {
+                this.SelectedInstrument = this.Instruments[0];
+                this.SelectedInstrument.IsSelected = true;
+            }
+            console.log(this.SelectedInstrument);
+        });
 
         /* Mock data */
-        this.Instruments = [];
-        for (var i = 1; i <= 5; i++) {
-            let data = new Instrument();
-            data.Id = i;
-            data.Model = "Instrument" + i;
-            data.Manufacturer = "Keysight";
-            data.FullImageUrl = "./src/assets/images/PROD-2372474-33.jpg";
-            if (i == 1) {
-                data.IsSelected = true;
-                this.SelectedInstrument = data;
-            }
-            this.Instruments.push(data);
-        }
+        // this.Instruments = [];
+        // for (var i = 1; i <= 5; i++) {
+        //     let data = new Instrument();
+        //     data.Id = i;
+        //     data.Model = "Instrument" + i;
+        //     data.Manufacturer = "Keysight";
+        //     data.FullImageUrl = "./src/assets/images/PROD-2372474-33.jpg";
+        //     if (i == 1) {
+        //         data.IsSelected = true;
+        //         this.SelectedInstrument = data;
+        //     }
+        //     this.Instruments.push(data);
+        // }
     }
 
     showDetail(instrument: Instrument): void {

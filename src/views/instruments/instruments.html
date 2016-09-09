@@ -1,5 +1,3 @@
-
-
 <nav class="navbar navbar-dark bg-primary">
     <div class="navbar-brand">
         <a id="toggleSidebar" data-toggle="offcanvas" class="handCursor logo hidden-md-up" (click)="toggleSidebar()">
@@ -10,10 +8,10 @@
     <h4 class="navbar-brand">Instruments</h4>
     <ul class="nav navbar-nav">
         <li class="nav-item">
-            <a href="#" class="nav-link" title="Refresh"><i class="fa fa-refresh fa-fw"></i> <span class="hidden-sm-down">Refresh</span> </a>
+            <button class="nav-link btn btn-link" title="Refresh" (click)="refresh($event)"><i class="fa fa-refresh fa-fw"></i> <span class="hidden-sm-down">Refresh</span> </button>
         </li>
         <li class="nav-item">
-            <a href="#postModal" class="nav-link" title="Add Instrument"><i class="fa fa-plus"></i> <span class="hidden-sm-down">Add Instrument</span> </a>
+            <button href="#postModal" class="nav-link btn btn-link" title="Add Instrument" (click)="addInstrument()"><i class="fa fa-plus"></i> <span class="hidden-sm-down">Add Instrument</span> </button>
         </li>
 
     </ul>
@@ -30,7 +28,7 @@
         </li>
     </ul>
 </nav>
-<div class="workArea">    
+<div class="workArea">
     <router-outlet>
 
     </router-outlet>
