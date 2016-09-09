@@ -5,7 +5,9 @@ import {NgClass}                                from '@angular/common';
 import {DataService}                    from '../../services/DataService';
 import {ErrorHandlingService}           from '../../services/ErrorHandlingService';
 import {Instrument}                     from '../../models/Instrument';
+import {Interface}                     from '../../models/Interface';
 import {InstrumentDetailComponent}      from './instrument-detail.component';
+import {ApiService}     from '../services/ApiService';
 
 @Component({
     //selector: 'instrument-list',
@@ -14,21 +16,37 @@ import {InstrumentDetailComponent}      from './instrument-detail.component';
     providers: [DataService, ErrorHandlingService]
 })
 export class InstrumentListComponent implements OnInit {
-
+    InterfacesDictionary: { [name: string]: Interface } = {};
+    Interfaces:Interface[] = [];
     Instruments: Instrument[];
     SelectedInstrument: Instrument;
 
-    constructor(private mDataService: DataService, private mRouter: Router) {
+    constructor(private mDataService: DataService, private mApiService: ApiService, private mRouter: Router) {
         console.log("Constructor of InstrumentListComponent.");
     }
 
 
     ngOnInit() {
-        var command = { Name: "ACE-DoGetInstruments" };
-        this.mDataService.Post("http://localhost:14029/api/commands", command, response => {
-            console.log("api response: " + response);
+        this.mApiService.getInstruments(response => {
+            console.log(response);
             this.Instruments = response.InstrumentsChanges;
-            console.log(this.Instruments);
+
+            let index:number = 1;
+            for (let instrument of this.Instruments) {
+                let item = this.InterfacesDictionary[instrument.AgentName];
+                if (!item) {
+                    item = new Interface();
+                    item.Name = instrument.AgentName;
+                    item.Header = instrument.AgentName;
+                    item.Id = index;
+                    this.InterfacesDictionary[instrument.AgentName]= item;
+                    this.Interfaces.push( item );
+                    index++;
+                }
+                item.Instruments.push(instrument);
+            }
+            console.log("interfaces");
+            console.log(this.InterfacesDictionary);
 
             if (this.Instruments) {
                 this.SelectedInstrument = this.Instruments[0];
@@ -54,7 +72,6 @@ export class InstrumentListComponent implements OnInit {
     }
 
     showDetail(instrument: Instrument): void {
-        //this.mRouter.navigate(['InstrumentDetail', { id: instrument.Id }]);
         this.loadInstrument(instrument.Id);
     }
 
@@ -85,5 +102,11 @@ export class InstrumentListComponent implements OnInit {
         this.SelectedInstrument = instrument;
 
     }
-
+    getInstrumentImage(instrument: Instrument): string {
+        console.log("get instrument icon");
+        if (instrument && instrument.FullImageUrl)
+            return instrument.FullImageUrl;
+        else
+            return './src/assets/images/defaultinstrument.png';
+    }
 }

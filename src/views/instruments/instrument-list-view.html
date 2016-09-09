@@ -20,20 +20,31 @@
             </div>
 
             <div id="instrumentList" class="list-group list-group-flush full-card-body">
-                <button *ngFor="let instrument of Instruments; let isEven=even;" class="list-group-item" [ngClass]="{active:instrument.IsSelected,evenBg:isEven}" (click)="selectInstrument(instrument)">
-                    <div class="row">
-                        <div class="media">
-                            <div class="media-left media-middle">
-                                <img class="img-rounded instrumentThumb" [src]="instrument.FullImageUrl" />
-                                <span class="fa fa-check-circle fa-2x fa-fw success-icon notification"></span>
-                            </div>
-                            <div class="media-body">
-                                <h6 class="list-group-item-heading">{{instrument.Model}} {{instrument.Manufacturer}} {{instrument.Type}}</h6>
-                                <p class="list-group-item-text">{{instrument.FirmwareVersion}}</p>
-                            </div>
+                <div id="accordion" role="tabList" aria-multiselectable="true">
+                    <div class="card" *ngFor="let interface of Interfaces;">
+                        <div class="card-header" id="{{interface.Id}}" role="tab">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#{{interface.Header}}" aria-expanded="true" [attr.aria-controls]="interface.Header">
+                               <i class="fa fa-chevron-down" ></i> {{interface.Header}} 
+                            </a>
+                        </div>
+                        <div class="card-block panel-collapse collapse in" role="tabpanel" id="{{interface.Header}}" [attr.aria-labelledby]="'interface.Id'">
+                            <button *ngFor="let instrument of interface.Instruments; let isEven=even;" class="list-group-item" [ngClass]="{active:instrument.IsSelected,evenBg:isEven}" (click)="selectInstrument(instrument)">
+                                    <div class="row">
+                                        <div class="media">
+                                            <div class="media-left media-middle">
+                                                <img class="img-rounded instrumentThumb" [src]="getInstrumentImage(instrument)" />
+                                                <span class="fa fa-check-circle fa-2x fa-fw success-icon notification"></span>
+                                            </div>
+                                            <div class="media-body text-xs-left">
+                                                <h6 class="list-group-item-heading ">{{instrument.Model}} {{instrument.Manufacturer}} {{instrument.Type}}</h6>
+                                                <p class="list-group-item-text">{{instrument.FirmwareVersion}}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </button>
                         </div>
                     </div>
-                </button>
+                </div>
             </div>
 
         </div>
