@@ -10,8 +10,22 @@ $header-height:48px;
     -moz-border-radius: 0 !important;
     border-radius: 0 !important;
 }
-#instrumentList .card-block{
+
+#instrumentList .card-block {
     padding: 0.2rem;
+}
+
+#instrumentList .open i.fa-chevron-down {
+    -webkit-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+#instrumentList i.fa-chevron-down {
+    right: 12px;
+    left: auto;
+    font-size: 16px;
 }
 
 #instrumentDetail .full-card-body {

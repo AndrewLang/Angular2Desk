@@ -109,4 +109,7 @@ export class InstrumentListComponent implements OnInit {
         else
             return './src/assets/images/defaultinstrument.png';
     }
+    toggleInterface( item: Interface){
+        item.IsCollapse = !item.IsCollapse;
+    }
 }

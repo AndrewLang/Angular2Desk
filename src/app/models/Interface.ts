@@ -5,4 +5,6 @@ export class Interface{
     Name:string;
     Header:string;
     Instruments:Array<Instrument> = [];
+
+    IsCollapse: boolean; 
 }

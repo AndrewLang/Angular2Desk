@@ -23,8 +23,8 @@
                 <div id="accordion" role="tabList" aria-multiselectable="true">
                     <div class="card" *ngFor="let interface of Interfaces;">
                         <div class="card-header" id="{{interface.Id}}" role="tab">
-                            <a data-toggle="collapse" data-parent="#accordion" href="#{{interface.Header}}" aria-expanded="true" [attr.aria-controls]="interface.Header">
-                               <i class="fa fa-chevron-down" ></i> {{interface.Header}} 
+                            <a data-toggle="collapse" data-parent="#accordion" href="#{{interface.Header}}" [ngClass]="{'open': interface.IsCollapse}" aria-expanded="true" [attr.aria-controls]="interface.Header" (click)="toggleInterface(interface)">
+                                <i class="fa fa-chevron-down"></i> {{interface.Header}}
                             </a>
                         </div>
                         <div class="card-block panel-collapse collapse in" role="tabpanel" id="{{interface.Header}}" [attr.aria-labelledby]="'interface.Id'">
