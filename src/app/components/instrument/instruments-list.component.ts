@@ -17,7 +17,7 @@ import {ApiService}     from '../services/ApiService';
 })
 export class InstrumentListComponent implements OnInit {
     InterfacesDictionary: { [name: string]: Interface } = {};
-    Interfaces:Interface[] = [];
+    Interfaces: Interface[] = [];
     Instruments: Instrument[];
     SelectedInstrument: Instrument;
 
@@ -29,9 +29,10 @@ export class InstrumentListComponent implements OnInit {
     ngOnInit() {
         this.mApiService.getInstruments(response => {
             console.log(response);
-            this.Instruments = response.InstrumentsChanges;
+            this.Instruments = response.Instruments;
+            console.log(this.Instruments);
 
-            let index:number = 1;
+            let index: number = 1;
             for (let instrument of this.Instruments) {
                 let item = this.InterfacesDictionary[instrument.AgentName];
                 if (!item) {
@@ -39,8 +40,8 @@ export class InstrumentListComponent implements OnInit {
                     item.Name = instrument.AgentName;
                     item.Header = instrument.AgentName;
                     item.Id = index;
-                    this.InterfacesDictionary[instrument.AgentName]= item;
-                    this.Interfaces.push( item );
+                    this.InterfacesDictionary[instrument.AgentName] = item;
+                    this.Interfaces.push(item);
                     index++;
                 }
                 item.Instruments.push(instrument);
@@ -109,7 +110,7 @@ export class InstrumentListComponent implements OnInit {
         else
             return './src/assets/images/defaultinstrument.png';
     }
-    toggleInterface( item: Interface){
+    toggleInterface(item: Interface) {
         item.IsCollapse = !item.IsCollapse;
     }
 }
