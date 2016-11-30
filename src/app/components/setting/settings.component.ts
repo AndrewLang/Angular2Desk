@@ -1,13 +1,11 @@
 ﻿import {Component}                       from '@angular/core';
-import { ROUTER_DIRECTIVES}              from '@angular/router';
 
 import {SettingsListComponent}           from './settings-list.component';
 import {SettingDetailComponent}          from './setting-detail.component';
 import {SidebarService}                  from '../services/SidebarService';
 
 @Component({
-    templateUrl: 'src/views/settings/settings.html',
-    directives: [ROUTER_DIRECTIVES]
+    templateUrl: 'src/views/settings/settings.html'
 })
 export class SettingsComponent {
     IsSidebarVisible: boolean;

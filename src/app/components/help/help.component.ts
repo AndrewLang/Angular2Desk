@@ -1,12 +1,10 @@
 ﻿import {Component}                     from '@angular/core';
-import { ROUTER_DIRECTIVES}                 from '@angular/router';
 
 import {HelpListComponent}             from './help-list.component';
 import {SidebarService}                from '../services/SidebarService';
 
 @Component({
-    templateUrl: 'src/views/help/help.html',
-    directives: [ROUTER_DIRECTIVES]
+    templateUrl: 'src/views/help/help.html'
 })
 
 export class HelpComponent {

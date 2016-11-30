@@ -1,7 +1,6 @@
 ﻿
 
 import {Component, OnInit, OnDestroy}       from '@angular/core';
-import { ROUTER_DIRECTIVES}                 from '@angular/router';
 
 
 import {InstrumentListComponent}            from './instruments-list.component';
@@ -11,7 +10,6 @@ import {SidebarService}                     from '../services/SidebarService';
 
 @Component({
     templateUrl: 'src/views/instruments/instruments.html',
-    directives: [ROUTER_DIRECTIVES, InstrumentListComponent],
     providers: [ SidebarService]
 })
 export class InstrumentsComponent implements OnInit, OnDestroy {

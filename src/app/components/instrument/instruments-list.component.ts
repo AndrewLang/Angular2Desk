@@ -1,5 +1,5 @@
 ﻿import {Component, OnInit, Injectable}          from '@angular/core';
-import {ROUTER_DIRECTIVES, Router}              from '@angular/router';
+import { Router}                                from '@angular/router';
 import {NgClass}                                from '@angular/common';
 
 import {DataService}                    from '../../services/DataService';
@@ -11,8 +11,7 @@ import {ApiService}     from '../services/ApiService';
 
 @Component({
     //selector: 'instrument-list',
-    templateUrl: 'src/views/instruments/instrument-list-view.html',
-    directives: [ROUTER_DIRECTIVES, NgClass, InstrumentDetailComponent],
+    templateUrl: 'src/views/instruments/instrument-list-view.html',    
     providers: [DataService, ErrorHandlingService]
 })
 export class InstrumentListComponent implements OnInit {
