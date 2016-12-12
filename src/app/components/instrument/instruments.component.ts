@@ -1,14 +1,12 @@
-﻿import {Component, OnInit, OnDestroy}       from '@angular/core';
+﻿import { Component, OnInit, OnDestroy } from '@angular/core';
 
 
-import {InstrumentListComponent}            from './instruments-list.component';
-import {InstrumentDetailComponent}          from './instrument-detail.component';
-import {SidebarService}                     from '../services/SidebarService';
-
+import { SidebarService } from '../services/SidebarService';
+import * as System from '../../system/index';
 
 @Component({
     templateUrl: 'src/views/instruments/instruments.html',
-    providers: [ SidebarService]
+    providers: [SidebarService]
 })
 export class InstrumentsComponent implements OnInit, OnDestroy {
     IsSidebarVisible: boolean;
@@ -32,10 +30,16 @@ export class InstrumentsComponent implements OnInit, OnDestroy {
 
     }
 
-    refresh(){
+    refresh() {
 
     }
-    addInstrument(){
-        
+    addInstrument() {
+
+    }
+    LaunchInteractiveIO(): void {
+        System.Process.Start("C:\\Program Files\\Keysight\\IO Libraries Suite\\InteractiveIO.exe");
+    }
+    LaunchIoMonitor(): void {
+        System.Process.Start("C:\\Program Files\\Keysight\\IO Libraries Suite\\IOMonitor.exe");
     }
 }

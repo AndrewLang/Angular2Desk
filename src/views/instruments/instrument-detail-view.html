@@ -5,46 +5,62 @@
         </div>
         <div class="card-block full-card-body">
             <div class="row">
-                <div *ngIf="Instrument.Manufacturer">
-                    <div class="col-md-4">
-                        Manufacturer:
+                <h5 class="card-title"> <i class="fa fa-fw fa-info"></i> Properties</h5>
+
+                <div class="col-md-9">
+                    <div *ngIf="Instrument.Manufacturer">
+                        <div class="col-md-4">
+                            Manufacturer:
+                        </div>
+                        <div class="col-md-8">
+                            {{Instrument.Manufacturer}}
+                        </div>
                     </div>
-                    <div class="col-md-8">
-                        {{Instrument.Manufacturer}}
+
+                    <div *ngIf="Instrument.Model">
+                        <div class="col-md-4">
+                            Model:
+                        </div>
+                        <div class="col-md-8">
+                            {{Instrument.Model}}
+                        </div>
+                    </div>
+
+                    <div *ngIf="Instrument.SerialNumber">
+                        <div class="col-md-4">
+                            Serial Number:
+                        </div>
+                        <div class="col-md-8">
+                            {{Instrument.SerialNumber}}
+                        </div>
+                    </div>
+
+                    <div *ngIf="Instrument.Firmware">
+                        <div class="col-md-4">
+                            Firmware Version:
+                        </div>
+                        <div class="col-md-8">
+                            {{Instrument.Firmware}}
+                        </div>
+                    </div>
+                    <div *ngIf="Instrument.WebPageUrl">
+                        <div class="col-md-4">
+                            Web information:
+                        </div>
+                        <div class="col-md-8">
+                            <a (click)="OpenProductPage()">Product Page</a>
+                        </div>
                     </div>
                 </div>
 
-                <div *ngIf="Instrument.Model">
-                    <div class="col-md-4">
-                        Model:
-                    </div>
-                    <div class="col-md-8">
-                        {{Instrument.Model}}
-                    </div>
-                </div>
-
-                <div *ngIf="Instrument.SerialNumber">
-                    <div class="col-md-4">
-                        Serial Number:
-                    </div>
-                    <div class="col-md-8">
-                        {{Instrument.SerialNumber}}
-                    </div>
-                </div>
-
-                <div *ngIf="Instrument.FirmwareVersion">
-                    <div class="col-md-4">
-                        Firmware Version:
-                    </div>
-                    <div class="col-md-8">
-                        {{Instrument.FirmwareVersion}}
-                    </div>
+                <div class="col-md-3">
+                    <img class="img-rounded instrumentThumbBig" [src]="getInstrumentImage()" />
                 </div>
             </div>
 
-            <hr *ngIf="Instrument.Addresses" />
+            <hr />
             <div class="row" *ngIf="Instrument.Addresses">
-                <h5 class="card-title">Connection Strings</h5>
+                <h5 class="card-title"> <i class="fa fa-fw fa-plug"></i> Connection Strings</h5>
                 <p class="card-subtitle">VISA Addresses</p>
 
                 <div *ngFor="let address of Instrument.Addresses">
@@ -57,18 +73,29 @@
                 </div>
             </div>
 
-            <hr *ngIf="Instrument.Drivers" />
-            <div class="row" *ngIf="Instrument.Drivers">
-                <h5 class="card-title">Installed Drivers</h5>
+            <hr />
+            <div class="row">
+                <h5 class="card-title"><i class="fa fa-fw fa-rocket"></i> Installed Drivers</h5>
 
-                <div *ngFor="let driver of Instrument.Drivers.Versions">
+                <div *ngIf="Instrument.Drivers">
+                    <div *ngFor="let driver of Instrument.Drivers.Versions">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <p class="card-text">{{driver}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div *ngIf="!Instrument.Drivers">
                     <div class="row">
                         <div class="col-md-12">
-                            <p class="card-text">{{driver}}</p>
+                            <p class="card-text">No installed drivers</p>
                         </div>
                     </div>
                 </div>
             </div>
+
         </div>
 
     </div>

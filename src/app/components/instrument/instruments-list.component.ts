@@ -5,26 +5,22 @@ import * as Models from '../../models/index';
 import * as Services from '../../services/index';
 import * as System from '../../system/index';
 
-import { DataService } from '../../services/DataService';
-import { ErrorHandlingService } from '../../services/ErrorHandlingService';
 
-import { ApiService } from '../services/ApiService';
 
 @Component({
     //selector: 'instrument-list',
-    templateUrl: 'src/views/instruments/instrument-list-view.html',
-    providers: [DataService, ErrorHandlingService]
+    templateUrl: 'src/views/instruments/instrument-list-view.html'
 })
 export class InstrumentListComponent implements OnInit {
-    InterfacesDictionary: { [name: string]: Models.Interface } = {};
+    InterfacesDictionary = new System.Dictionary<Models.Interface>();
     InterfacesTranslateMap: { [name: string]: string } = {};
     Interfaces: Models.Interface[] = [];
     Instruments: Models.Instrument[];
     SelectedInstrument: Models.Instrument;
     private logger: System.ILogger;
 
-    constructor(private mDataService: DataService,
-        private mApiService: ApiService,
+    constructor(
+        private mApiService: Services.ApiService,
         private mRouter: Router,
         loggerFactory: System.DefaultLoggerFactory
     ) {
@@ -39,24 +35,29 @@ export class InstrumentListComponent implements OnInit {
     ngOnInit() {
         this.mApiService.GetInstruments().then(response => {
             this.Instruments = response;
-            this.logger.Debug(response)
-                .Debug(this.Instruments);
+            // this.logger.Debug(response)
+            //     .Debug(this.Instruments);
 
-            console.log(response);
+            //onsole.log(response);
 
             let index: number = 1;
             for (let instrument of this.Instruments) {
-                let item = this.InterfacesDictionary[instrument.AgentName];
+                let item = this.InterfacesDictionary.Item(instrument.AgentName);
                 if (!item) {
                     item = new Models.Interface();
                     item.Name = instrument.AgentName;
                     item.Header = this.InterfacesTranslateMap[instrument.AgentName] || instrument.AgentName;
                     item.Id = index;
-                    this.InterfacesDictionary[instrument.AgentName] = item;
+                    this.InterfacesDictionary.Add(instrument.AgentName, item);
                     this.Interfaces.push(item);
                     index++;
                 }
                 item.Instruments.push(instrument);
+
+                this.logger.Debug(`Instrument '${instrument.Model}'`);
+                for (let dataPackage of instrument.Packages) {
+                    this.logger.Debug(dataPackage);
+                }
             }
             this.logger.Debug("Interfaces:")
                 .Debug(this.InterfacesDictionary);
@@ -85,26 +86,6 @@ export class InstrumentListComponent implements OnInit {
         // }
     }
 
-    showDetail(instrument: Models.Instrument): void {
-        this.loadInstrument(instrument.Id);
-    }
-    loadInstrument(id: number) {
-        if (id) {
-            var command = { Name: "GetInstrument", Parameters: { Id: id } };
-            this.mDataService.Post("/api/commands", command, response => {
-                this.Instruments.forEach((instrument: Models.Instrument) => { instrument.IsSelected = false; });
-
-                this.SelectedInstrument = response;
-
-                this.Instruments.forEach((instrument: Models.Instrument) => {
-                    if (instrument.Id == this.SelectedInstrument.Id)
-                        instrument.IsSelected = true;
-                });
-
-                this.logger.Debug(this.Instruments);
-            });
-        }
-    }
     selectInstrument(instrument: Models.Instrument) {
         if (this.SelectedInstrument)
             this.SelectedInstrument.IsSelected = false;
@@ -115,13 +96,25 @@ export class InstrumentListComponent implements OnInit {
 
     }
     getInstrumentImage(instrument: Models.Instrument): string {
-        this.logger.Debug("get instrument icon");
         if (instrument && instrument.FullImageUrl)
             return instrument.FullImageUrl;
         else
             return './src/assets/images/defaultinstrument.png';
     }
-    toggleInterface(item: Models.Interface) {
+    toggleInterface(item: Models.Interface): void {
         item.IsCollapse = !item.IsCollapse;
+    }
+
+    CollapseAllInterfaces(): void {
+        for (let item of this.InterfacesDictionary.Values()) {
+            item.IsCollapse = true;
+            this.logger.Debug(`Collapse ${item.Header}`);
+        }
+    }
+    ExpandAllInterfaces(): void {
+        for (let item of this.InterfacesDictionary.Values()) {
+            item.IsCollapse = false;
+            this.logger.Debug(`Expand ${item.Header}`);
+        }
     }
 }

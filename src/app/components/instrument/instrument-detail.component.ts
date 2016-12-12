@@ -1,7 +1,7 @@
-﻿import {Component, OnInit, Input}       from '@angular/core';
+﻿import { Component, OnInit, Input } from '@angular/core';
 
 
-import {Instrument}                     from '../../models/Instrument';
+import { Instrument } from '../../models/Instrument';
 
 @Component({
     selector: 'instrument-detail',
@@ -15,5 +15,19 @@ export class InstrumentDetailComponent implements OnInit {
     constructor() { }
 
     ngOnInit() { }
-        
+
+    OpenProductPage(): void {
+        if (this.Instrument) {
+
+        }
+    }
+    getInstrumentImage(): string {
+        if (!this.Instrument)
+            return;
+            
+        if (this.Instrument && this.Instrument.FullImageUrl)
+            return this.Instrument.FullImageUrl;
+        else
+            return './src/assets/images/defaultinstrument.png';
+    }
 }

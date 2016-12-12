@@ -10,19 +10,20 @@ import { routing, appRoutingProviders }     from './app.routing';
 import * as Components                      from './components/index';
 import * as Services                        from './services/index';
 import * as System                          from './system/index';
+import * as Directives                      from './directives/index';
 
 
 @NgModule({
     imports: [BrowserModule,FormsModule,RouterModule,JsonpModule, HttpModule, routing],
     declarations: [
+        Directives.StopPropagation, 
         Components.AppComponent,           Components.InstrumentsComponent,           Components.ChassisComponent,
         Components.SettingsComponent,      Components.HelpComponent,                  Components.InstrumentListComponent, 
         Components.InstrumentDetailComponent,
         Components.TestComponent],
 
     providers:[ appRoutingProviders,
-        Components.ApiService,
-        Services.DataService,               Services.ErrorHandlingService,          
+        Services.ApiService,
         System.CommandRepository,           System.DefaultLoggerFactory,            System.LoggingExceptionHandler,
         System.HttpClient ],
 
@@ -30,6 +31,6 @@ import * as System                          from './system/index';
 })
 export class AppModule { 
     constructor(){
-        console.log("start app module.");
+        
     }
 }

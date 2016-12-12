@@ -1,13 +1,12 @@
 import { Injectable } from '@angular/core';
-import { DataService } from '../../services/DataService';
 
-import * as Models from '../../models/index';
-import * as System from '../../system/index';
+import * as Models from '../models/index';
+import * as System from '../system/index';
 
 @Injectable()
 export class ApiService {
 
-    constructor(private mDataService: DataService,
+    constructor(
         private httpClient: System.HttpClient
     ) {
 

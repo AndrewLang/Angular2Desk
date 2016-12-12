@@ -1,5 +1,6 @@
 
 
-export class DataPackage{
-    
+export class DataPackage {
+    Name: string;
+    ShortName: string;
 }

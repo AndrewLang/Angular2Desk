@@ -9,11 +9,13 @@
 
                         </button>
                         <ul class="dropdown-menu dropdown-menu-right">
-                            <li><a class="dropdown-item" href="">My Profile 1</a></li>
-                            <li><a class="dropdown-item" href="">My Profile 2</a></li>
-                            <li><a class="dropdown-item" href="">My Profile 3</a></li>
+                            <li><a class="dropdown-item" href="" (click)="CollapseAllInterfaces()" StopPropagation>Collapse all interfaces</a></li>
+                            <li><a class="dropdown-item" href="" (click)="ExpandAllInterfaces()" StopPropagation>Expand all interfaces</a></li>
                             <li class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="">View Options</a></li>
+                            <li><a class="dropdown-item" href="" StopPropagation>Switch to Compact Mode</a></li>
+                            <li><a class="dropdown-item" href="" StopPropagation>Show Filter</a></li>
+                            <li class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="" StopPropagation>View Options</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -23,11 +25,14 @@
                 <div id="accordion" role="tabList" aria-multiselectable="true">
                     <div class="card" *ngFor="let interface of Interfaces;">
                         <div class="card-header" id="{{interface.Id}}" role="tab">
-                            <a data-toggle="collapse" data-parent="#accordion" href="#{{interface.Header}}" [ngClass]="{'open': interface.IsCollapse}" aria-expanded="true" [attr.aria-controls]="interface.Header" (click)="toggleInterface(interface)">
-                                <i class="fa fa-chevron-down"></i> {{interface.Header}}
-                            </a>
+                            <div class="row">
+                                <a href="#" [ngClass]="{'open': interface.IsCollapse}" [attr.aria-controls]="interface.Header" (click)="toggleInterface(interface)" StopPropagation>
+                                    <i class="fa fa-chevron-down"></i> {{interface.Header}}
+                                </a>
+                            </div>
                         </div>
-                        <div class="card-block panel-collapse collapse in" role="tabpanel" id="{{interface.Header}}" [attr.aria-labelledby]="'interface.Id'">
+
+                        <div class="card-block" [ngClass]="{'panel-collapse collapse in': !interface.IsCollapse, 'collapse':interface.IsCollapse}" role="tabpanel" id="{{interface.Header}}" [attr.aria-labelledby]="'interface.Id'">
                             <button *ngFor="let instrument of interface.Instruments; let isEven=even;" class="list-group-item" [ngClass]="{active:instrument.IsSelected,evenBg:isEven}" (click)="selectInstrument(instrument)">
                                     <div class="row">
                                         <div class="media">
@@ -36,8 +41,9 @@
                                                 <span class="fa fa-check-circle fa-2x fa-fw success-icon notification"></span>
                                             </div>
                                             <div class="media-body text-xs-left">
-                                                <h6 class="list-group-item-heading ">{{instrument.Model}} {{instrument.Manufacturer}} {{instrument.Type}}</h6>
-                                                <p class="list-group-item-text">{{instrument.FirmwareVersion}}</p>
+                                                <h6 class="list-group-item-heading ">{{instrument.Model}}, {{instrument.Manufacturer}}, {{instrument.Type}}</h6>
+                                                <!--<p class="list-group-item-text">{{instrument.Firmware}}</p>-->
+                                                <p class="list-group-item-text">{{instrument.Addresses[0].VisaAddress}}</p>
                                             </div>
                                         </div>
                                     </div>
@@ -61,16 +67,14 @@
     <div class="card">
         <div class="card-header">
             My Instruments
-
             <ul class="nav navbar-nav pull-right">
                 <li class="dropdown">
                     <button type="button" class="close dropdown-toggle" data-toggle="dropdown"></button>
                     <ul class="dropdown-menu dropdown-menu-right">
-                        <li><a class="dropdown-item" href="">My Profile 1</a></li>
-                        <li><a class="dropdown-item" href="">My Profile 2</a></li>
-                        <li><a class="dropdown-item" href="">My Profile 3</a></li>
+                        <li><a class="dropdown-item" href="" StopPropagation>Switch to Compact Mode</a></li>
+                        <li><a class="dropdown-item" href="" StopPropagation>Show Filter</a></li>
                         <li class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="">View Options</a></li>
+                        <li><a class="dropdown-item" href="" StopPropagation>View Options</a></li>
                     </ul>
                 </li>
             </ul>
@@ -85,13 +89,17 @@
                 <div class="row">
                     <div class="media">
                         <div class="media-left">
-                            <img class="media-object img-rounded instrumentThumbBig" [src]="instrument.FullImageUrl" />
+                            <img class="media-object img-rounded instrumentThumbBig" [src]="getInstrumentImage(instrument)" />
                             <span class="fa fa-check-circle fa-3x fa-fw success-icon notification-big"></span>
                         </div>
 
                         <div class="media-body">
-                            <h5 class="list-group-item-heading">{{instrument.Manufacturer}} {{instrument.Model}} {{instrument.Type}}</h5>
-                            <p class="list-group-item-text">{{instrument.FirmwareVersion}}</p>
+                            <h5 class="list-group-item-heading">{{instrument.Model}}</h5>
+                            <p class="list-group-item-text">Manufacturer: {{instrument.Manufacturer}}</p>
+                            <p class="list-group-item-text">Serial Number: {{instrument.SerialNumber}}</p>
+                            <p class="list-group-item-text">Firmware Version: {{instrument.Firmware}}</p>
+                            <!--<p class="list-group-item-text">Type: {{instrument.Type}}</p>-->
+                            <p class="list-group-item-text">Web information: Product Page</p>
 
 
                             <hr *ngIf="instrument.Addresses" />
@@ -102,21 +110,30 @@
                                 <div *ngFor="let address of instrument.Addresses">
                                     <div class="row">
                                         <div class="col-md-12">
-                                            <p class="card-text"><span class="fa fa-check-circle fa-fw btn-success-outline"></span> {{address.Address}}</p>
+                                            <p class="card-text"><span class="fa fa-check-circle fa-fw btn-success-outline"></span> {{address.VisaAddress}}</p>
 
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
-                            <hr *ngIf="instrument.Drivers" />
-                            <div class="row" *ngIf="instrument.Drivers">
+                            <hr />
+                            <div class="row">
                                 <h5 class="card-title">Installed Drivers</h5>
 
-                                <div *ngFor="let driver of instrument.Drivers.Versions">
+                                <div *ngIf="instrument.Drivers">
+                                    <div *ngFor="let driver of instrument.Drivers.Versions">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <p class="card-text">{{driver}}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div *ngIf="!instrument.Drivers">
                                     <div class="row">
                                         <div class="col-md-12">
-                                            <p class="card-text">{{driver}}</p>
+                                            <p class="card-text">No installed drivers</p>
                                         </div>
                                     </div>
                                 </div>

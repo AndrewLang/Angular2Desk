@@ -8,22 +8,21 @@
     <h4 class="navbar-brand">Instruments</h4>
     <ul class="nav navbar-nav">
         <li class="nav-item">
-            <button class="nav-link btn btn-link" title="Refresh" (click)="refresh($event)"><i class="fa fa-refresh fa-fw"></i> <span class="hidden-sm-down">Refresh</span> </button>
+            <button class="nav-link btn btn-link" title="Refresh" (click)="refresh()"><i class="fa fa-refresh fa-fw"></i> <span class="hidden-sm-down">Refresh</span> </button>
         </li>
         <li class="nav-item">
             <button href="#postModal" class="nav-link btn btn-link" title="Add Instrument" (click)="addInstrument()"><i class="fa fa-plus"></i> <span class="hidden-sm-down">Add Instrument</span> </button>
         </li>
-
     </ul>
     <ul class="nav navbar-nav pull-right">
         <li class="dropdown">
             <button type="button" class="close dropdown-toggle" data-toggle="dropdown"></button>
             <ul class="dropdown-menu dropdown-menu-right">
-                <li><a class="dropdown-item" href="">More</a></li>
-                <li><a class="dropdown-item" href="">More</a></li>
-                <li><a class="dropdown-item" href="">More</a></li>
-                <li><a class="dropdown-item" href="">More</a></li>
-                <li><a class="dropdown-item" href="">More</a></li>
+                <li><a class="dropdown-item" href="" (click)="LaunchInteractiveIO()" StopPropagation>Interactive IO</a></li>
+                <li><a class="dropdown-item" href="" (click)="LaunchIoMonitor()" StopPropagation>IO Monitor</a></li>
+                <li class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="" StopPropagation>Command Expert</a></li>
+                <li><a class="dropdown-item" href="" StopPropagation>BenchVue</a></li>
             </ul>
         </li>
     </ul>

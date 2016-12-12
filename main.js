@@ -2,6 +2,7 @@
 const electron = require('electron');
 const app = electron.app;
 const BrowserWindow = electron.BrowserWindow;
+const Menu = electron.Menu;
 
 let mainWindow;
 let debug = false;
@@ -19,6 +20,8 @@ function createWindow() {
         mainWindow.webContents.openDevTools();
         //mainWindow.maximize();
     }
+
+    //Menu.setApplicationMenu(null);
 }
 
 app.on('ready', createWindow);

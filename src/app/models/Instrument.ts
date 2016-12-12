@@ -1,6 +1,7 @@
 ﻿import {Address}    from './Address';
 import {Driver}     from './Driver';
 import {Alias}      from './Alias';
+import {DataPackage}    from './DataPackage';
 
 export class Instrument {
     Id: number;
@@ -14,6 +15,7 @@ export class Instrument {
     AgentName: string;
     DisplayState: string;
     InstrumentType:string;
+    WebPageUrl: string;
     IsFavorite:boolean;
     IsLan:boolean;
     IsSdi:boolean;
@@ -22,6 +24,7 @@ export class Instrument {
     Addresses: Address[];
     Drivers: Driver[];
     Aliases: Alias[];
+    Packages: DataPackage[];
 }
 
 
