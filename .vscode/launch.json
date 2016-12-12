@@ -1,0 +1,44 @@
+{
+    "version": "0.2.0",
+    "configurations": [{
+            "name": "Debug main process",
+            "type": "node",
+            "request": "launch",
+            "program": "${workspaceRoot}\\main.js",
+            "stopOnEntry": false,
+            "args": [],
+            "cwd": "${workspaceRoot}",
+            "preLaunchTask": null,
+            "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/electron.cmd",
+            "runtimeArgs": ["--enable-logging"],
+            "env": { "NODE_ENV": "development" },
+            "console": "internalConsole",
+            "sourceMaps": false,
+            "outFiles": []
+        },
+        {
+            "name": "Debug Renderer Process",
+            "type": "chrome",
+            "request": "launch",
+            "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/electron.cmd",
+            // Use the following for Windows
+            // "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/electron.cmd",
+            "runtimeArgs": [
+                "${workspaceRoot}",
+                "--enable-logging",
+                "--remote-debugging-port=9222"
+            ],
+            "webRoot": "${workspaceRoot}",
+            "sourceMaps": true
+        },
+        {
+            "name": "Attach to Process",
+            "type": "node",
+            "request": "attach",
+            "processId": "${command.PickProcess}",
+            "port": 5858,
+            "sourceMaps": false,
+            "outDir": null
+        }
+    ]
+}
