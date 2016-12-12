@@ -41,6 +41,10 @@
 <!-- 2. Configure SystemJS -->
 <script src="systemjs.config.js"></script>
 <script>
+    window.electron = require('electron');
+    window.fs = require('fs');
+    window.log4js = require('log4js');
+
     System.import('app')
         .catch(function(err) {
             console.error(err);

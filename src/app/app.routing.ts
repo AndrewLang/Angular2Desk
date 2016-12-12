@@ -3,29 +3,23 @@
 import { ModuleWithProviders }              from '@angular/core';
 import { Routes, RouterModule }             from '@angular/router';
 
-import {AppComponent}                       from './components/app.component';
-import {InstrumentsComponent}               from './components/instrument/instruments.component';
-import {ChassisComponent}                   from './components/chassis/chassis.component';
-import {SettingsComponent}                  from './components/setting/settings.component';
-import {HelpComponent}                      from './components/help/help.component';
-import {InstrumentListComponent}            from './components/instrument/instruments-list.component';
+import * as Components                      from './components/index';
 
 import {instrumentRoutes}                   from './components/instrument/instrument.routing';
-import {TestComponent}                      from './components/test/test.component';
 
 const rootRoutes: Routes = [
     { path: '', redirectTo: '/instruments', pathMatch: 'full' },
-    { path: 'test', component: TestComponent },
-    { path: 'home', component: AppComponent },
+    { path: 'test', component: Components.TestComponent },
+    { path: 'home', component: Components.AppComponent },
     {
-        path: 'instruments', component: InstrumentsComponent,
+        path: 'instruments', component: Components.InstrumentsComponent,
         children: [
-            { path: '', component: InstrumentListComponent },
+            { path: '', component: Components.InstrumentListComponent },
         ]
     },
-    { path: 'chassis', component: ChassisComponent },
-    { path: 'settings', component: SettingsComponent },
-    { path: 'help', component: HelpComponent },
+    { path: 'chassis', component: Components.ChassisComponent },
+    { path: 'settings', component: Components.SettingsComponent },
+    { path: 'help', component: Components.HelpComponent },
 ];
 
 const appRoutes: Routes = [

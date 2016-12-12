@@ -1,4 +1,8 @@
-﻿export class Instrument {
+﻿import {Address}    from './Address';
+import {Driver}     from './Driver';
+import {Alias}      from './Alias';
+
+export class Instrument {
     Id: number;
     Model: string;
     Manufacturer: string;
@@ -20,25 +24,4 @@
     Aliases: Alias[];
 }
 
-export class Address {
-    VisaAddress: string;
-    DisplayState: string;
-    ElementType: string;
-    InstrumentKey: string;
-    ParentHashKey:string;
-    PersistentId: string;
-    SiclAddress:string;
-    AddressFormat: number;
-    FavoriteConnection:boolean;
-    IsPxi:boolean;
-    StaticallyDefined: boolean;
-}
 
-export class Driver {
-    CanUpdate: boolean;
-    Versions: string[];
-}
-
-export class Alias{
-
-}

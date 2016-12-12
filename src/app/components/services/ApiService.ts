@@ -1,18 +1,26 @@
-import {Injectable} from '@angular/core';
-import {DataService} from '../../services/DataService';
+import { Injectable } from '@angular/core';
+import { DataService } from '../../services/DataService';
+
+import * as Models from '../../models/index';
+import * as System from '../../system/index';
 
 @Injectable()
-export class ApiService{
+export class ApiService {
 
-constructor( private mDataService : DataService){
-    
-}
+    constructor(private mDataService: DataService,
+        private httpClient: System.HttpClient
+    ) {
 
-    getInstruments(callback:(data:any)=>void){
-        var command = { Name: "ACE-DoGetInstruments" };
-        this.mDataService.Post("http://localhost:14029/api/commands", command, response => {
+    }
 
-            callback(response);            
+    GetInstruments(): Promise<Models.Instrument[]> {
+        let self = this;
+        return new Promise(function (resolve, reject) {
+            var command = { Name: "ACE-DoGetInstruments" };
+            self.httpClient.Post("http://localhost:14029/api/commands", command, response => {
+                resolve(response.Instruments);
+            });
         });
+
     }
 }
