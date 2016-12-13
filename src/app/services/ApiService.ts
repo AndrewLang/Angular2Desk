@@ -15,8 +15,10 @@ export class ApiService {
     GetInstruments(): Promise<Models.Instrument[]> {
         let self = this;
         return new Promise(function (resolve, reject) {
+            //let url = "http://localhost:14029/api/commands";
+            let url = "http://yuxilangtest1/api/commands";
             var command = { Name: "ACE-DoGetInstruments" };
-            self.httpClient.Post("http://localhost:14029/api/commands", command, response => {
+            self.httpClient.Post(url, command, response => {
                 resolve(response.Instruments);
             });
         });
