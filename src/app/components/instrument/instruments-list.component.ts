@@ -99,7 +99,7 @@ export class InstrumentListComponent implements OnInit {
         if (instrument && instrument.FullImageUrl)
             return instrument.FullImageUrl;
         else
-            return './src/assets/images/defaultinstrument.png';
+            return './src/assets/images/DefaultInstrument.png';
     }
     toggleInterface(item: Models.Interface): void {
         item.IsCollapse = !item.IsCollapse;
