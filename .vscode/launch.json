@@ -4,12 +4,16 @@
             "name": "Debug main process",
             "type": "node",
             "request": "launch",
-            "program": "${workspaceRoot}\\main.js",
+            // use following for Linux
+            "program": "${workspaceRoot}/main.js",            
             "stopOnEntry": false,
             "args": [],
             "cwd": "${workspaceRoot}",
             "preLaunchTask": null,
-            "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/electron.cmd",
+            // use following for Linux
+            "runtimeExecutable": "${workspaceRoot}/node_modules/electron-prebuilt/dist/electron",
+            // use following for Window
+            //"runtimeExecutable": "${workspaceRoot}/node_modules/.bin/electron.cmd",
             "runtimeArgs": ["--enable-logging"],
             "env": { "NODE_ENV": "development" },
             "console": "internalConsole",
@@ -20,7 +24,8 @@
             "name": "Debug Renderer Process",
             "type": "chrome",
             "request": "launch",
-            "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/electron.cmd",
+            // use following for Linux
+            "runtimeExecutable": "${workspaceRoot}/node_modules/electron-prebuilt/dist/electron",
             // Use the following for Windows
             // "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/electron.cmd",
             "runtimeArgs": [
